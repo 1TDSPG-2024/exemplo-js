@@ -1,4 +1,34 @@
-"use strict"
+
+// DOCUMENT OBJECT MODEL (DOM) - Gerenciado pela janela do navegador - Hierarquico
+
+/*
+Comentario de bloco
+*/
+
+//console.log("Hello World");
+//console.error("Erro");
+//console.warn("Aviso");
+//console.info("Informação");
+
+// Recuperando o botão submit com a 
+// function getElementById(id) e guardando ele em uma constante
+
+const btn = document.getElementById("btnSubmit");
+// console.log(btn.inner); // atencao ao ponto e virgula
+// Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função
+
+/* btn.addEventListener("click", function(){
+    console.log(this); // Enxerga o elemento como um objeto
+}); 
+ */
+
+/* btn.addEventListener("click", ()=>{  
+    console.log(this); // Não "enxerga" elemento como um objeto, classe. Não associa
+}); */
+
+
+
+// "use strict"
 //Hoisting
 // var nome = "Joaquim";
 
