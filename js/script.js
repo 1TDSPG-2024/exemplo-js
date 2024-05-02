@@ -5,12 +5,17 @@
 
 //Recuperando o botão submit com a função getElementById(id) e guardar ele em uma constante
 
-const btn = document.getElementById("btnSubmit");
-//atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar
-btn.addEventListener("click", ()=>{
-    console.log("Botão clicado")
-})
+// const btn = document.getElementById("btnSubmit");
+// //atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar
+// btn.addEventListener("click", ()=>{
+//     console.log("Botão clicado")
+// })
 
+var nome = "joaquim"
+if(true){
+    let nome = joão
+}
+console.log(nome)
 
 //"use strict"
 //Hoisting
