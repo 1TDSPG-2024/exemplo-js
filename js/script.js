@@ -13,7 +13,7 @@ Comentario de bloco
 // Recuperando o botão submit com a 
 // function getElementById(id) e guardando ele em uma constante
 
-const btn = document.getElementById("btnSubmit");
+const btn = document.getElementById("btnSubmit"); // constante
 // console.log(btn.inner); // atencao ao ponto e virgula
 // Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função
 
@@ -30,14 +30,22 @@ const btn = document.getElementById("btnSubmit");
 
 // "use strict"
 //Hoisting
-// var nome = "Joaquim";
 
-// if(true)
-// {
-//     let nome = "João";
-// }
+var nome = "Joaquim"; // variável
 
-// console.log(nome);
+if(true)
+{
+    let nome = "João"; // Hoisting, Let respeita o escopo 
+}
+
+console.log(nome);
+
+
+teste = "Olá"
+console.log(teste);
+
+var teste;
+
 
 // Declaração de variáveis (var, let, const):
 // Usando var
