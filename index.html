@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilo.css" />
     <title>JavaScript</title>
+    
   </head>
 
   <body>
@@ -54,18 +55,17 @@
               <label for="idLembrar">Lembrar-me</label>
             </div>
             <div>
-              <button type="submit" id="btnSubmit">Enviar</button>
+              <button
+                type="submit"
+                id="btnSubmit"
+                onclick="console.log('Olá mundo de verdade agora!')"
+              >
+                Enviar
+              </button>
             </div>
           </fieldset>
         </form>
       </div>
     </div>
-    <script>
-      const soma = (a, b) => {
-          return a + b;
-      }
-
-      console.log(soma(10, 10)); // print
-    </script>
   </body>
 </html>
