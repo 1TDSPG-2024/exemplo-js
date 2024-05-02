@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estilo.css">
     <title>JavaScript</title>
-    <script>
-        //função tradicional em JS
-        function apresentarMensagemNaTela(mensagem){
-            //Meio de apresentar mensagem na tela
-            alert(mensagem);
-        }
-        var parametro = prompt("Digite a Mensagem");
-        apresentarMensagemNaTela(parametro);
-    </script>
 </head>
 
 <body>
@@ -49,20 +40,12 @@
                         <label for="idLembrar">Lembrar-me</label>
                     </div>
                     <div>
-                        <button type="submit" id="btnSubmit">Enviar</button>
+                        <button type="submit" id="btnSubmit" onclick="console.log('Olá Mundo!')">Enviar</button>
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
-
-    <script>
-        //função tradicional em JS
-        const soma = (a,b) =>{
-            return a + b;
-        }
-        console.log(soma(10,10))
-    </script>
             
 </body>                     
 </html>
