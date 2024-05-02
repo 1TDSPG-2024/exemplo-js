@@ -1,4 +1,18 @@
-"use strict"
+//comentário em linha
+/*
+comentário em bloco
+*/
+console.log("Hello world")
+console.error("Erro")
+console.warn("Aviso")
+console.info("informação")
+
+const btn = document.getElementById("btnSubmit")
+btn.addEventListener("click", function(){
+    console.log("Botão clicado")
+});
+
+//"use strict"
 //Hoisting
 // var nome = "Joaquim";
 
