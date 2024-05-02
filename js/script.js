@@ -1,4 +1,26 @@
-"use strict"
+
+// Comentário de linha 
+// console.log("Hello World")
+// console.error("Erro")
+// console.warn("Aviso")
+// console.info("Informação")
+
+//Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante.
+const btn = document.getElementById("btnSubmit");
+// Atrelar um evento ao botão, no caso , ao clicar no botão, ele vai executar a função 
+//  btn.addEventListener("click", function(){
+//     console.log(this);
+//  });
+// btn.addEventListener("click",()=>{
+//     console.log(this);
+// });
+
+
+
+
+
+
+// "use strict"
 //Hoisting
 // var nome = "Joaquim";
 
