@@ -1,35 +1,41 @@
 
-// Comentário de linha 
-// console.log("Hello World")
-// console.error("Erro")
-// console.warn("Aviso")
-// console.info("Informação")
+//Comentário de linha
+/*
+Comentário de bloco
+*/
+// console.log("Hello World!");
+// console.error("Erro");
+// console.warn("Aviso");
+// console.info("Informação");
 
 //Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante.
 const btn = document.getElementById("btnSubmit");
-// Atrelar um evento ao botão, no caso , ao clicar no botão, ele vai executar a função 
-//  btn.addEventListener("click", function(){
-//     console.log(this);
-//  });
-// btn.addEventListener("click",()=>{
+//Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
+
+// btn.addEventListener("click", function(){
 //     console.log(this);
 // });
 
-
-
-
-
+// btn.addEventListener("click", ()=>{
+//     console.log(this);
+// });
 
 // "use strict"
 //Hoisting
-// var nome = "Joaquim";
+let nome = "Alexandre";
 
-// if(true)
-// {
-//     let nome = "João";
-// }
+if(true)
+{
+    let nome = "João";
+}
 
-// console.log(nome);
+console.log(nome);
+
+teste = "Olá";
+console.log(teste);
+
+var teste;
+
 
 // Declaração de variáveis (var, let, const):
 // Usando var
@@ -41,9 +47,9 @@ const btn = document.getElementById("btnSubmit");
 // console.log(y);
 
 // // Usando const (constante, valor não pode ser alterado)
-// const z = 30;
-// console.log(z);
-// // z = 20;
+const z = 30;
+console.log(z);
+// z = 20;
 
 // Tipos de dados em JavaScript:
 
