@@ -12,16 +12,16 @@ btn.addEventListener("click", function(){
     console.log("Botão clicado")
 });
 
-//"use strict"
-//Hoisting
-// var nome = "Joaquim";
+// "use strict"
+// Hoisting
+var nome = "Joaquim";
 
-// if(true)
-// {
-//     let nome = "João";
-// }
+if(true)
+{
+    let nome = "João";
+}
 
-// console.log(nome);
+console.log(nome);
 
 // Declaração de variáveis (var, let, const):
 // Usando var
