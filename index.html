@@ -7,19 +7,6 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <title>JavaScript</title>
     
-    <script>
-        // funcao tradicional em JS
-        function apresentarMensagemNaTela(mensagem){
-            // Meio de apresentar a mensagem na tela
-            //alert(mensagem) --> Obsoletos
-            document.write(mensagem); 
-        }
-        
-        var parametro = prompt("Digite a mensagem!")
-        
-        apresentarMensagemNaTela(parametro)
-    </script>
-
 </head>
 
 <body>
@@ -60,7 +47,15 @@
             </form>
         </div>
     </div>
-
+    
+    <script>
+        // funcao tradicional em JS
+        const soma = (a, b)=> { // arrow function, declarativa. Mais utilizada. Consegue declarar como variável
+            return a + b; 
+        } 
+        
+        console.log(soma(2, 2)); // exibe no console (terminal)
+    </script>
             
 </body>                     
 </html>
