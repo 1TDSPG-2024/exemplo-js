@@ -1,4 +1,26 @@
-"use strict"
+//Comentário de linha
+/*
+Comentário de bloco
+*/
+
+console.log("Hello World!");
+console.error("Erro");
+console.warn("Aviso!");
+console.info("Informação");
+
+//Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante
+const btn = document.getElementById("btnSubmit");
+
+//Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
+btn.addEventListener("click", function(){
+  console.log(this); //Função clássica enxerga estrutura de objeto/elemento;
+});
+btn.addEventListener("click", ()=>{
+  console.log(this); //Não enxerga, não associa o elemento;
+});
+
+
+("use strict");
 //Hoisting
 // var nome = "Joaquim";
 
@@ -74,7 +96,6 @@
 // console.log(idade);
 // console.log(cidade);
 
-
 // // EXERCÍCIOS
 
 // // Conversão entre tipos de dados:
@@ -114,10 +135,8 @@
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
 
-
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
-
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -126,7 +145,6 @@
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
-
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
