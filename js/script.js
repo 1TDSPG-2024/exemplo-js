@@ -22,6 +22,16 @@ const btn = document.getElementById("btnSubmit");
 //     console.log(this);
 // });
 
+// let respeita o escopo, o var não
+
+var nome = "Joaquim";
+
+if(true)
+{
+    var nome = "João";
+}
+
+console.log(nome);
 
 
 
