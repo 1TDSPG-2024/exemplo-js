@@ -40,13 +40,13 @@ console.log(nome);
 // Tipos de dados em JavaScript:
 
 // // Number
-// let num = 10;
-// console.log(num);
+let num = 10;
+console.log(num);
 
 // // String
-// let str = "Olá, mundo!";
-// console.log(str.charAt(0));
-// console.log(str.indexOf("Olá"));
+let str = "Olá, mundo!";
+console.log(str.charAt(0));
+console.log(str.indexOf("Olá"));
 
 // // Boolean
 // let bool = true;
@@ -118,7 +118,8 @@ console.log(nome);
 //     let nome = "João";
 // }
 // console.log(nome);
-
+//resposta: joaquim
+ 
 // Exercício 2 - Declaração de Variáveis:
 // Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
 // let estrito;
@@ -127,6 +128,7 @@ console.log(nome);
 // Exercício 3 - Tipos de Dados:
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
+//resposta: string
 
 
 // Exercício 4 - Mesclar Arrays:
@@ -163,3 +165,36 @@ console.log(nome);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+let listaUsuarios = [
+    {email:"email@email.com",senha:"123456"},
+    {email:"jose@email.com",senha:"123456"},
+    {email:"joao@email.com",senha:"123456"},
+    {email:"maria@email.com",senha:"123456"}
+];
+
+//Recuperar o botão de subimi através da função queryselector
+
+const btnSubmit = document.querySelector("button[type=submit]")
+console.log(btnSubmit.innerHTML)
+//Atrelando o evento click ao botão
+btnSubmit.addEventListener("click", ()=>{
+    //Pegando os valores dos inputs pelo método value.
+    const usuario = {
+        email:"",
+        senha:""
+    }
+
+    let emailUser = document.querySelector("imput{type=email}").value;
+    let senhaUser = document.querySelector("imput{type=password}").value;
+    
+    //Popular o objeti com os dados do usuario
+    usuario.email = emailUser 
+    usuario.senha = senhaUser 
+
+    for (let x = 0; x < listaUsuarios.lenght; x++) {
+        if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
+            console.log("Usuário validado")
+        }
+    }
+})
