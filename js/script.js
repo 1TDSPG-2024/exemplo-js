@@ -8,16 +8,16 @@ console.error("Erro");
 console.warn("Aviso!");
 console.info("Informação");
 
-//Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante
-const btn = document.getElementById("btnSubmit");
+// //Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante
+// const btn = document.getElementById("btnSubmit");
 
-//Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
-btn.addEventListener("click", function(){
-  console.log(this); //Função clássica enxerga estrutura de objeto/elemento;
-});
-btn.addEventListener("click", ()=>{
-  console.log(this); //Não enxerga, não associa o elemento;
-});
+// //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
+// btn.addEventListener("click", function(){
+//   console.log(this); //Função clássica enxerga estrutura de objeto/elemento;
+// });
+// btn.addEventListener("click", ()=>{
+//   console.log(this); //Não enxerga, não associa o elemento;
+// });
 
 
 ("use strict");
@@ -143,7 +143,8 @@ let str = "Olá, mundo!";
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
 let arr1 = [1, 2, 3, 4, 5];
 let arr2 = [6, 7, 8, 9, 10];
-let arrConcatenado = [...arr1, ...arr2];
+// let arrConcatenado = [...arr1, ...arr2];
+let arrConcatenado = arr1.concat(arr2)
 console.log(arrConcatenado);
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
@@ -175,3 +176,39 @@ console.log(obj.idade); // Saída: 25
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+let listaUsuarios = [
+  {email:"email@email.com",senha:"123456"},
+  {email:"jose@email.com",senha:"123456"},
+  {email:"joao@email.com",senha:"123456"},
+  {email:"maria@email.com",senha:"123456"},
+]
+
+//Recuperar o botão submit atráves da função querySelector.
+const btnSubmit = document.querySelector("button[type=submit]")
+//Atrelando o evento click ao botão.
+btnSubmit.addEventListener("click", () =>{
+  // console.log(btnSubmit.innerHTML);
+  //Pegando os valores dos inputs pelo método value
+  const usuario = {
+      email:"",
+      senha:""
+  }
+
+  let emailUser = document.querySelector("input[type=email]").value;
+  let senhaUser = document.querySelector("input[type=password]").value; 
+  
+  // console.log(emailUser);
+  // console.log(senhaUser);
+
+  usuario.email = emailUser
+  usuario.email = senhaUser
+
+  for (let x = 0; x < listaUsuarios.length; x++) {
+    if(usuario.email === listaUsuarios[x].email && usuario.senha === listaUsuarios[x].senha) {
+      console.log("Usuário validado");
+    } else {
+      console.log("Usuário inválido")
+    }
+  }
+})
