@@ -1,4 +1,3 @@
-"use strict"
 
 //Comentário de linha
 /*
@@ -21,26 +20,21 @@ const btn = document.getElementById("btnSubmit");
 //     console.log(this);
 // });
 
-
-
-
-
-
-
-
-
-
-
-//"use strict"
+// "use strict"
 //Hoisting
-// var nome = "Joaquim";
+let nome = "Alexandre";
 
-// if(true)
-// {
-//     let nome = "João";
-// }
-
-// console.log(nome);
+if(true)
+    {
+        let nome = "João";
+    }
+    
+    console.log(nome);
+    
+    teste = "Olá";
+    console.log(teste);
+    
+    var teste;
 
 // Declaração de variáveis (var, let, const):
 // Usando var
@@ -52,9 +46,9 @@ const btn = document.getElementById("btnSubmit");
 // console.log(y);
 
 // // Usando const (constante, valor não pode ser alterado)
-// const z = 30;
-// console.log(z);
-// // z = 20;
+const z = 30;
+console.log(z);
+ z = 20;
 
 // Tipos de dados em JavaScript:
 
