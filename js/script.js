@@ -26,7 +26,7 @@ btn.addEventListener("click", ()=>{
 
 // if(true)
 // {
-//     let nome = "João";
+//     let nome = "João"; 
 // }
 
 // console.log(nome);
@@ -36,14 +36,14 @@ btn.addEventListener("click", ()=>{
 // var x = 10;
 // console.log(x);
 
-// // Usando let
+// Usando let
 // let y = 20;
 // console.log(y);
 
-// // Usando const (constante, valor não pode ser alterado)
+// Usando const (constante, valor não pode ser alterado)
 // const z = 30;
 // console.log(z);
-// // z = 20;
+// z = 20;
 
 // Tipos de dados em JavaScript:
 
@@ -53,27 +53,28 @@ btn.addEventListener("click", ()=>{
 
 // // String
 // let str = "Olá, mundo!";
-// console.log(str.charAt(0));
-// console.log(str.indexOf("Olá"));
+// console.log(str.charAt(0)); // Pegaria o primeiro
+// console.log(str.indexOf("Olá")); // Retorna a posição que começa
+// console.log(str.slice(0, 3)); // Pega os [i] passados
 
 // // Boolean
 // let bool = true;
 // console.log(bool);
 
-// // Array
+// Array - São considerados objetos
 // let arr1 = [1, 2, 3, 4, 5];
-// let arr2 = [6,7,8,9,10];
+// let arr2 = [6, 7, 8, 9, 10];
 // console.log(arr1);
 // console.table(arr1);
-// // Mesclar Arrays
+// Mesclar Arrays
 // let arr3 = arr1.concat(arr2);
 // console.log(arr3);
-// // Mesclar Arrays com SPREAD
+// Mesclar Arrays com SPREAD
 // let arr4 = [...arr1, ...arr2];
 // console.log(arr4);
 
 // // Object
-// let obj = { nome: "João", idade: 25, devedor: true};
+// let obj = {nome: "João", idade: 25, devedor: true};
 // console.log(obj);
 // console.table(obj);
 // console.log(obj.nome);
@@ -96,11 +97,9 @@ btn.addEventListener("click", ()=>{
 // console.log(idade);
 // console.log(cidade);
 
-// // EXERCÍCIOS
-
 // // Conversão entre tipos de dados:
 
-// // Converter string para número
+// Converter string para número
 // let strNumero = "10";
 // let numero = parseInt(strNumero);
 // console.log(numero); // Saída: 10 (número)
@@ -119,29 +118,38 @@ btn.addEventListener("click", ()=>{
 
 // Exercício 1 - Variáveis e Hoisting:
 // Qual será o valor de nome após a execução do código abaixo?
-// "use strict";
-// var nome = "Joaquim";
-// if (true) {
-//     let nome = "João";
-// }
-// console.log(nome);
+"use strict";
+var nome = "Joaquim";
+if (true) {
+    let nome = "João";
+}
+console.log(nome);
+//RESPOSTA: Joaquim (Respeita o escopo)
 
 // Exercício 2 - Declaração de Variáveis:
 // Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
 // let estrito;
-// console.log(estrito); // Saída: undefined
+// console.log(estrito);
+let x;
+console.log(x);
+//RESPOSTA: undefined
 
 // Exercício 3 - Tipos de Dados:
 // Qual é o tipo de dado da variável str?
-// let str = "Olá, mundo!";
+let str = "Olá, mundo!";
+//RESPOSTA: Tipo de dado é o STRING
 
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [6, 7, 8, 9, 10];
+let arrConcatenado = [...arr1, ...arr2];
+console.log(arrConcatenado);
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
-// let obj = { nome: "João", idade: 25, devedor: true };
-// console.log(obj.idade); // Saída: 25
+let obj = { nome: "João", idade: 25, devedor: true };
+console.log(obj.idade); // Saída: 25
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
