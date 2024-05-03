@@ -6,17 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estilo.css">
     <title>JavaScript</title>
-    <script>
-        // Função tradicional em JS
-        function apresentarMensagemNaTela(mensagem) {
-            // Meio de apresentar a mensagem na tela 
-            document.write(mensagem);
-        }
 
-        var parametro = prompt("Digite a mensagem!");
-        apresentarMensagemNaTela(parametro);
-
-    </script>
 
 </head>
 
@@ -59,7 +49,15 @@
         </div>
     </div>
 
+    <script>
+        //Função tradicional em JS
+        const soma = (a, b) => {
+            return a + b;
+        }
 
+        console.log(soma(10, 10));
+
+    </script>
 </body>
 
 </html>
