@@ -22,19 +22,19 @@ const btn = document.getElementById("btnSubmit");
 
 // "use strict"
 //Hoisting
-let nome = "Alexandre";
+// let nome = "Alexandre";
 
-if(true)
-{
-    let nome = "João";
-}
+// if(true)
+// {
+//     let nome = "João";
+// }
 
-console.log(nome);
+// console.log(nome);
 
-teste = "Olá";
-console.log(teste);
+// teste = "Olá";
+// console.log(teste);
 
-var teste;
+// var teste;
 
 
 // Declaração de variáveis (var, let, const):
@@ -47,24 +47,24 @@ var teste;
 // console.log(y);
 
 // // Usando const (constante, valor não pode ser alterado)
-const z = 30;
-console.log(z);
+// const z = 30;
+// console.log(z);
 // z = 20;
 
 // Tipos de dados em JavaScript:
 
-// // Number
+// // // Number
 // let num = 10;
 // console.log(num);
 
-// // String
+// // // String
 // let str = "Olá, mundo!";
 // console.log(str.charAt(0));
 // console.log(str.indexOf("Olá"));
 
-// // Boolean
-// let bool = true;
-// console.log(bool);
+// // // Boolean
+// // let bool = true;
+// // console.log(bool);
 
 // // Array
 // let arr1 = [1, 2, 3, 4, 5];
@@ -110,7 +110,7 @@ console.log(z);
 // // Converter string para número
 // let strNumero = "10";
 // let numero = parseInt(strNumero);
-// console.log(numero); // Saída: 10 (número)
+// console.log(numero); // Saída: 10 (número) 
 
 // // Converter número para string
 // let numeroStr = 20;
@@ -145,7 +145,10 @@ console.log(z);
 
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
-
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [6,7,8,9,10];
+let arrConcatenado = arr1.concat(arr2);
+console.log(arrConcatenado);
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -154,7 +157,9 @@ console.log(z);
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
-
+let obj = { nome: "João", idade: 25, devedor: true };
+obj = {...obj, cidade: "São Paulo"};
+console.log(obj);
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
@@ -177,3 +182,38 @@ console.log(z);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+let arr4 = [...arr1, ...arr2];
+console.log(arr4);
+
+
+let listaUsuarios = [
+    {email:"email@email.com", senha:"123456"},
+    {email:"jose@email.com", senha:"123456"},
+    {email:"joao@email.com", senha:"123456"},
+    {email:"maria@email.com", senha:"123456"},
+]
+
+//Recuperar o botão de submit através da função query
+const btnSubmit = document.querySelector("button[type=submit]");
+console.log(btnSubmit.innerHTML);
+btnSubmit.addEventListener("click",()=>{
+    //Pegando os valores dos inputs pelo método value.
+    const usuario = {
+        email:"",
+        senha:""
+    }
+
+    let emailUser = document.querySelector("inout[type=email]").value;
+    let senhaUser = document.querySelector("inout[type=password]").value;
+
+    //Popular os objetos com os dados do usuário.
+    usuario.email = emailUser;
+    usuario.senha = senhaUser
+
+    for(let x = 0; x < listaUsuarios.length; x++){
+
+        if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
+            console.log("Usuário validado")
+        } 
+    }
+})
