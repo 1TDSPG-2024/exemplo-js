@@ -125,15 +125,16 @@ console.log(z);
 // EXERCÍCIOS
 
 // Exercício 1 - Variáveis e Hoisting:
-// Qual será o valor de nome após a execução do código abaixo?
+// Qual será o valor de nome após a execução do código abaixo? 
 // "use strict";
 // var nome = "Joaquim";
 // if (true) {
 //     let nome = "João";
 // }
 // console.log(nome);
+//Resposta: Joaquim
 
-// Exercício 2 - Declaração de Variáveis:
+// Exercício 2 - Declaração de Variáveis :
 // Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
 // let estrito;
 // console.log(estrito); // Saída: undefined
@@ -141,10 +142,14 @@ console.log(z);
 // Exercício 3 - Tipos de Dados:
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
-
+//Resposta : string
 
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5, 6];
+// let arrConcatenado = arr1.concat(arr2);
+// console.log(arrConcatenado);
 
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
@@ -154,26 +159,41 @@ console.log(z);
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
-
+// let obj = {}; 
+// obj.cidade = "São Paulo";
+// console.log(obj);
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
+// const stringNumero = "10";
+// const numero = parseInt(stringNumero);
+// console.log(numero);
+
 
 // Exercício 8 - Estrutura Condicional com Operadores:
 // Qual será a saída do código abaixo?
 // let idade = 20;
 // let result = (idade >= 18) ? "Maior de idade" : "Menor de idade";
 // console.log(result);
+//Resposta: maior de idade
 
 // Exercício 9 - Estrutura Condicional Tradicional:
 // Qual será a saída do código abaixo?
 // let age = 20;
-
 // if (age >= 18) {
 //     console.log("Maior de idade");
 // } else {
 //     console.log("Menor de idade");
 // }
+//Resposta: a saida sera o IF, Maior de idade
+
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr4 = [...arr1, ...arr2];
+// console.log(arr4);
+
+
+
