@@ -234,4 +234,30 @@ arr5 = [5, 4, 3, 2, 1, 0]
 
 let arr6 = [... arr4, ...arr5];
 
-console.log(arr6)
+console.log(arr6);
+
+let obj3 = {nomeCompleto: "José Silva", idade: 20, devedor: true};
+
+obj3 = {...obj3, cidade: "São Paulo", estado: "SP"};
+
+console.log(obj3)
+
+console.log(obj3.estado)
+
+console.log(obj3["nomeCompleto"])
+
+console.log(obj3)
+
+let atributo = "idade"
+
+console.log("ATRIBUTO VARIADO : " + obj3[atributo])
+
+//DESTRUCTURING
+
+const pessoa = {nome1 : 'Maria', idade1: 34, cidade1: 'Florianópolis'};
+
+const {nome1, idade1, cidade1} = pessoa;
+console.log(nome1);
+console.log(idade1);
+console.log(cidade1);
+console.log(pessoa)
