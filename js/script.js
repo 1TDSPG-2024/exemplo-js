@@ -11,11 +11,11 @@
 //     console.log("Botão clicado")
 // })
 
-var nome = "joaquim"
-if(true){
-    let nome = joão
-}
-console.log(nome)
+// var nome = "joaquim"
+// if(true){
+//     let nome = joão
+// }
+// console.log(nome)
 
 //"use strict"
 //Hoisting
@@ -40,7 +40,7 @@ console.log(nome)
 // // Usando const (constante, valor não pode ser alterado)
 // const z = 30;
 // console.log(z);
-// // z = 20;
+// z = 20;
 
 // Tipos de dados em JavaScript:
 
@@ -52,6 +52,10 @@ console.log(nome)
 // let str = "Olá, mundo!";
 // console.log(str.charAt(0));
 // console.log(str.indexOf("Olá"));
+// let novaStr = str.charAt(5) + str.charAt(6);
+// console.log(novaStr);
+
+
 
 // // Boolean
 // let bool = true;
@@ -69,7 +73,7 @@ console.log(nome)
 // let arr4 = [...arr1, ...arr2];
 // console.log(arr4);
 
-// // Object
+// // // Object
 // let obj = { nome: "João", idade: 25, devedor: true};
 // console.log(obj);
 // console.table(obj);
@@ -113,51 +117,58 @@ console.log(nome)
 // let booleano = Boolean(valor);
 // console.log(booleano); // Saída: false (0 é considerado false)
 
-// EXERCÍCIOS
+// // EXERCÍCIOS
 
-// Exercício 1 - Variáveis e Hoisting:
-// Qual será o valor de nome após a execução do código abaixo?
-// "use strict";
+// // Exercício 1 - Variáveis e Hoisting:
+// // Qual será o valor de nome após a execução do código abaixo?
+// // "use strict";
 // var nome = "Joaquim";
 // if (true) {
 //     let nome = "João";
 // }
-// console.log(nome);
+// console.log(nome); //Saída: "Joaquim"
 
-// Exercício 2 - Declaração de Variáveis:
-// Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
+// // Exercício 2 - Declaração de Variáveis:
+// // Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
 // let estrito;
 // console.log(estrito); // Saída: undefined
 
-// Exercício 3 - Tipos de Dados:
-// Qual é o tipo de dado da variável str?
-// let str = "Olá, mundo!";
+// // Exercício 3 - Tipos de Dados:
+// // Qual é o tipo de dado da variável str?
+// let str = "Olá, mundo!"; // String
 
 
-// Exercício 4 - Mesclar Arrays:
-// Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
+// // Exercício 4 - Mesclar Arrays:
+// // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
+// let arr1 = [0, 1, 2, 3, 4, 5]
+// let arr2 = [6, 7, 8, 9, 10]
+// let arrConcatenado = [...arr1, ...arr2]
+// console.log(arrConcatenado) // Saída: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-
-// Exercício 5 - Acesso a Propriedades de Objetos:
-// Acesse a propriedade idade do objeto obj e imprima seu valor no console.
+// // Exercício 5 - Acesso a Propriedades de Objetos:
+// // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
 // let obj = { nome: "João", idade: 25, devedor: true };
 // console.log(obj.idade); // Saída: 25
 
-// Exercício 6 - Atributo Variável de Objetos:
-// Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
+// // Exercício 6 - Atributo Variável de Objetos:
+// // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
+// obj = {...obj, cidade: "São Paulo"};
+// console.log(obj); // Saída: {nome: 'João', idade: 25, devedor: true, cidade: 'São Paulo'}
 
+// // Exercício 7 - Conversão de String para Número:
+// // Converta a string "10" em um número e imprima o resultado no console.
+// let str2 = "10"
+// let num2 = parseInt(str2) 
+// console.log(num2) //Saída: 10
 
-// Exercício 7 - Conversão de String para Número:
-// Converta a string "10" em um número e imprima o resultado no console.
-
-// Exercício 8 - Estrutura Condicional com Operadores:
-// Qual será a saída do código abaixo?
+// // Exercício 8 - Estrutura Condicional com Operadores:
+// // Qual será a saída do código abaixo?
 // let idade = 20;
 // let result = (idade >= 18) ? "Maior de idade" : "Menor de idade";
 // console.log(result);
 
-// Exercício 9 - Estrutura Condicional Tradicional:
-// Qual será a saída do código abaixo?
+// // Exercício 9 - Estrutura Condicional Tradicional:
+// // Qual será a saída do código abaixo?
 // let age = 20;
 
 // if (age >= 18) {
@@ -166,5 +177,6 @@ console.log(nome)
 //     console.log("Menor de idade");
 // }
 
-// Exercício 10 - Mesclar Arrays com Spread:
-// Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+// // Exercício 10 - Mesclar Arrays com Spread:
+// // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
