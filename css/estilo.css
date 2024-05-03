@@ -2,25 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
-    
 }
 
-#cabecalho{
-  display: flex;
-  justify-content: space-between;
-
-  h1{
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 200px;
-  }
-
-=======
-}
-
-#cabecalho{
-    background-color: aquamarine;
-    height: 190px;
->>>>>>> 7b437d9ba520a2ab22f1417b03e772dd0841151a
+button[type=submit]{
+  background: #16611b;
+  border: none;
+  height: 5vh;
+  width: 10vw;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  border-radius: 5px;
 }
