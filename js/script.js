@@ -142,7 +142,7 @@
 // // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
 // let arr1 = [0, 1, 2, 3, 4, 5]
 // let arr2 = [6, 7, 8, 9, 10]
-// let arrConcatenado = [...arr1, ...arr2]
+// let arrConcatenado = arr1.concat(arr2)
 // console.log(arrConcatenado) // Saída: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // // Exercício 5 - Acesso a Propriedades de Objetos:
@@ -179,4 +179,36 @@
 
 // // Exercício 10 - Mesclar Arrays com Spread:
 // // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+// let arr1 = [0, 1, 2, 3, 4, 5]
+// let arr2 = [6, 7, 8, 9, 10]
+// let arrConcatenado = [...arr1, ...arr2]
+// console.log(arrConcatenado) // Saída: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+let listaUsuarios = [
+    {email: "email@gmail.com", senha: "123456"},
+    {email: "email2@gmail.com", senha: "1234567"},
+    {email: "email3@gmail.com", senha: "12345678"},
+    {email: "email4@gmail.com", senha: "123456789"}
+];
+//recuperar o botão de submit atraves da função querySelector
+const btnSubmit = document.querySelector("button[type=submit]");
+console.log(btnSubmit.innerHTML);
+//Atrelando evento click oa botão
+btnSubmit.addEventListener("click", ()=>{
+    //pegando os valores dos inputs pelo método value.
+    const usuario = {email: "", senha: ""}
+
+    let emailUser = document.querySelector("input[type=email]").value;
+    let senhaUser = document.querySelector("input[type=password]").value;
+
+    //Popular o objeto com os dados do usuário.
+    usuario.email = emailUser;
+    usuario.senha = senhaUser;
+
+    for (let x = 0; x < listaUsuarios.length; x++) {
+        if(usuario.email === listaUsuarios[x].email && usuario.senha === listaUsuarios[x].senha){
+            console.log("Usuário validado")
+        }
+    }
+
+})
