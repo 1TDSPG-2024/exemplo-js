@@ -12,6 +12,7 @@ Comentário de bloco
 const btn = document.getElementById("btnSubmit");
 //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
 
+
 // btn.addEventListener("click", function(){
 //     console.log(this);
 // });
@@ -22,19 +23,19 @@ const btn = document.getElementById("btnSubmit");
 
 // "use strict"
 //Hoisting
-let nome = "Alexandre";
+// let nome = "Alexandre";
 
-if(true)
-{
-    let nome = "João";
-}
+// if(true)
+// {
+//     let nome = "João";
+// }
 
-console.log(nome);
+// console.log(nome);
 
-teste = "Olá";
-console.log(teste);
+// teste = "Olá";
+// console.log(teste);
 
-var teste;
+// var teste;
 
 
 // Declaração de variáveis (var, let, const):
@@ -45,10 +46,11 @@ var teste;
 // // Usando let
 // let y = 20;
 // console.log(y);
+// // z = 20;
 
 // // Usando const (constante, valor não pode ser alterado)
-const z = 30;
-console.log(z);
+// const z = 30;
+// console.log(z);
 // z = 20;
 
 // Tipos de dados em JavaScript:
@@ -57,16 +59,21 @@ console.log(z);
 // let num = 10;
 // console.log(num);
 
+
 // // String
 // let str = "Olá, mundo!";
 // console.log(str.charAt(0));
-// console.log(str.indexOf("Olá"));
+// console.log(str.indexOf("mundo"));
+// console.log(str.slice(5 , 7));
+// console.log(str.indexOf("zureta"));
+// console.log(str.slice(924 , 930));
+
 
 // // Boolean
-// let bool = true;
-// console.log(bool);
+let bool = true;
+console.log(bool);
 
-// // Array
+// // // Array
 // let arr1 = [1, 2, 3, 4, 5];
 // let arr2 = [6,7,8,9,10];
 // console.log(arr1);
@@ -78,7 +85,7 @@ console.log(z);
 // let arr4 = [...arr1, ...arr2];
 // console.log(arr4);
 
-// // Object
+// // // Object
 // let obj = { nome: "João", idade: 25, devedor: true};
 // console.log(obj);
 // console.table(obj);
@@ -94,7 +101,7 @@ console.log(z);
 // obj = {...obj, cidade: "São Paulo", estado: "SP"};
 // console.log(obj);
 
-// //DESTRUCTURING
+//DESTRUCTURING
 // const pessoa = {nome : 'Maria', idade: 34, cidade: 'Florianópolis'};
 
 // const {nome, idade, cidade} = pessoa;
@@ -145,7 +152,10 @@ console.log(z);
 
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
-
+let arr1 = [1, 2, 3, 4];
+let arr2 = [5, 6, 7, 8, 9, 10];
+let arrConcatenado = arr1.concat(arr2);
+console.log(arrConcatenado);
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -154,6 +164,8 @@ console.log(z);
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
+let obj = {estado: "São Paulo", cidade: "SP"};
+console.log(obj);
 
 
 // Exercício 7 - Conversão de String para Número:
@@ -177,3 +189,38 @@ console.log(z);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+let listaUsuarios = [
+    {email: "email@email.com", senha:"12345"},
+    {email: "jose@email.com", senha:"12345"},
+    {email: "joao@email.com", senha:"12345"},
+    {email: "maria@email.com", senha:"12345"},
+    
+];
+
+//Recuperar o botão de submit através da função querySelector.
+const btnSubmit = document.querySelector("button[type=submit]");
+//Atrelando o evento click ao botão.
+btnSubmit.addEventListener("click",()=>{
+    //Pegando os valores dos inputs pelo método value.
+    const usuario = {
+        email:"",
+        senha:""
+    }
+
+    let emailUser = document.querySelector("input[type=email]").value;
+    let senhaUser = document.querySelector("input[type=password]").value;
+    
+    //Popular o objeto com os dados do usuário.
+    usuario.email = emailUser;
+    usuario.senha = senhaUser;
+
+    for (let x = 0; x < listaUsuarios.length; x++) {
+        
+        if((usuario,email === listaUsuarios[x].email) && (usuario.senha)){
+            console.log("Usuário validado")
+        }
+        
+    }
+
+})
