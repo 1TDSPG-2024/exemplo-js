@@ -145,7 +145,10 @@ console.log(z);
 
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
-
+let arr1 = [];
+let arr2 = [];
+let arrConcatenado = arr1.concat(arr2);
+console.log(arrConcatenado);
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -154,6 +157,13 @@ console.log(z);
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
+let obj = {cidade: "São Paulo"}
+console.log(obj);
+console.table(obj);
+console.log(obj.cidade);
+console.table(obj.cidade);
+let atributo = "cidade"
+console.log("Atrinuto variado : " + obj[atributo]);
 
 
 // Exercício 7 - Conversão de String para Número:
@@ -177,3 +187,37 @@ console.log(z);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+
+let listaUsuarios = [{
+    email:"email@Gmail.com", senha:"123456",},
+    {email:"jose@Gmail.com", senha:"123435"},
+    {emial:"Joao@Gmail.com", senha:"123456"},
+    {email:"maria@Gmai.com", senha:"123456"}
+];
+
+//Recuperar o botão de submit através da função querySelector.
+const btnSubmit = document.querySelector("button[type=submit]");
+//Atrelando o evento click ao botão.
+btnSubmit.addEventListener("click",()=>{
+    //Pegando os valores dos inputs pelo método value.
+    const usuario ={
+        email: "", 
+        senha: ""
+    }
+    let emailUser = document.querySelector("input[type=email]").Value;
+    let senhaUser = document.querySelector("input[type=password]").Value;
+    console.log(emailUser);
+    console.log(senhaUser);
+
+    //Popular o objeto com dados do usuário
+    usuario.email = emailUser;
+    usuario.senha = senhaUser;
+
+    for (let x = 0; x < listaUsuarios.length; x ++){
+        if((usuario.email === listaUsuarios[x].email &&
+            (usuario.senha === listaUsuario[x]).senha)){
+                console.log("usuário valido")
+            }
+    }
+
+})
