@@ -9,7 +9,7 @@ Comentário de bloco
 // console.info("Informação");
 
 //Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante.
-const btn = document.getElementById("btnSubmit");
+// const btn = document.getElementById("btnSubmit");
 //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
 
 // btn.addEventListener("click", function(){
@@ -22,41 +22,41 @@ const btn = document.getElementById("btnSubmit");
 
 // "use strict"
 //Hoisting
-let nome = "Alexandre";
+// let nome = "Alexandre";
 
-if(true)
-    {
-        let nome = "João";
-    }
+// if(true)
+//     {
+//         let nome = "João";
+//     }
     
-    console.log(nome);
+//     console.log(nome);
     
-    teste = "Olá";
-    console.log(teste);
+//     teste = "Olá";
+//     console.log(teste);
     
-    var teste;
+//     var teste;
 
 // Declaração de variáveis (var, let, const):
 // Usando var
-// var x = 10;
-// console.log(x);
+//  var x = 10;
+//  console.log(x);
 
 // // Usando let
-// let y = 20;
-// console.log(y);
+//  let y = 20;
+//  console.log(y);
 
 // // Usando const (constante, valor não pode ser alterado)
-const z = 30;
-console.log(z);
- z = 20;
+// const z = 30;
+// console.log(z);
+//  z = 20;
 
 // Tipos de dados em JavaScript:
 
 // // Number
-// let num = 10;
-// console.log(num);
+//  let num = 10;
+//  console.log(num);
 
-// // String
+// // // String
 // let str = "Olá, mundo!";
 // console.log(str.charAt(0));
 // console.log(str.indexOf("Olá"));
@@ -125,15 +125,18 @@ console.log(z);
 
 // Exercício 1 - Variáveis e Hoisting:
 // Qual será o valor de nome após a execução do código abaixo?
-// "use strict";
+"use strict"
 // var nome = "Joaquim";
 // if (true) {
 //     let nome = "João";
 // }
 // console.log(nome);
 
+//Joaquim
+
 // Exercício 2 - Declaração de Variáveis:
 // Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
+
 // let estrito;
 // console.log(estrito); // Saída: undefined
 
@@ -141,9 +144,14 @@ console.log(z);
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
 
+// String
+
 
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
+
+// let arrConcatenado = arr1.concat(arr2);
+// console.log(arrConcatenado)
 
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
@@ -153,16 +161,22 @@ console.log(z);
 
 // Exercício 6 - Atributo Variável de Objetos:
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
+// obj = {...obj, cidade: "São Paulo"};
+// console.log(obj);
 
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
+//  let str = "10"
+//  num = parseInt(str)
+//  console.log(num)
 
 // Exercício 8 - Estrutura Condicional com Operadores:
 // Qual será a saída do código abaixo?
 // let idade = 20;
 // let result = (idade >= 18) ? "Maior de idade" : "Menor de idade";
 // console.log(result);
+// "Maior de idade"
 
 // Exercício 9 - Estrutura Condicional Tradicional:
 // Qual será a saída do código abaixo?
@@ -174,5 +188,38 @@ console.log(z);
 //     console.log("Menor de idade");
 // }
 
+// Maior de idade
+
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+// let arr4 = [...arr1, ...arr2];
+
+let listaUsuarios = {
+    email : "email@email.com",senha: "123456"
+}
+
+//Recuperar o botão de submit através da função querySelector.
+const btnSubmit = document.querySelector("button[type=submit]");
+//Atrelando o evento click ao botão.
+btnSubmit.addEventListener("click",()=>{
+    //Pegando os valores dos inputs pelo método value.
+    const usuario = {
+        email:"",
+        senha:""
+    }
+
+  let emailUser = document.querySelector("input[type=email]").value;  
+  let senhaUser = document.querySelector("input[type=password]").value;
+  
+  //Popular o objeto com os dados do usuario
+
+  usuario.email = emailUser;
+  usuario.senha = senhaUser;
+
+  for (let x = 0; x < listaUsuarios.length; x++) {
+        
+    if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
+        console.log("Usuário validado")
+    }
+}
+})

@@ -5,22 +5,14 @@
 
     
 }
-
-#cabecalho{
-  display: flex;
-  justify-content: space-between;
-
-  h1{
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 200px;
-  }
-
-
-}
-
-#cabecalho{
-    background-color: aquamarine;
-    height: 190px;
-
+button[type = submit]{
+  background: #185324;
+  border: none;
+  height: 10vh;
+  width: 10vw;
+  display: block;
+  margin: 0 auto;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
 }
