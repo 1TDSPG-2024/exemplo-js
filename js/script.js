@@ -13,7 +13,8 @@ Comentario de bloco
 // Recuperando o botão submit com a 
 // function getElementById(id) e guardando ele em uma constante
 
-const btn = document.getElementById("btnSubmit"); // constante
+//document - DOM
+//const btn = document.getElementById("btnSubmit"); // constante
 // console.log(btn.inner); // atencao ao ponto e virgula
 // Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função
 
@@ -229,12 +230,24 @@ if (age >= 18) {
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
 
-arr4 = [10, 9, 8, 7, 6]
-arr5 = [5, 4, 3, 2, 1, 0]
 
-let arr6 = [... arr4, ...arr5];
+//ECMA Script - ES6 2015
+
+arr4 = [1, 2, 3, 4, 5]
+arr5 = [6, 7, 8, 9, 10]
+
+let arr6 = [... arr4, ...arr5]; // Spread '...' gera um novo array
+let arr7 = arr4.concat(arr5) // concat une as duas listas
 
 console.log(arr6);
+console.log(arr7);
+console.table(arr7);
+
+
+let str = "Hello World!";
+console.log(str.charAt(0));
+console.log(str.indexOf("World"))
+console.log(str.slice(5, 6))
 
 let obj3 = {nomeCompleto: "José Silva", idade: 20, devedor: true};
 
@@ -261,3 +274,35 @@ console.log(nome1);
 console.log(idade1);
 console.log(cidade1);
 console.log(pessoa)
+
+let listaUsuarios = [
+    {email:"email@email.com",senha:"123456"},
+    {email:"jose@email.com",senha:"123456"},
+    {email:"joao@email.com",senha:"123456"},
+    {email:"maria@email.com",senha:"123456"}
+];
+
+//Recuperar o botão de submit através da função querySelector.
+const btnSubmit = document.querySelector("button[type=submit]");
+//Atrelando o evento click ao botão.
+btnSubmit.addEventListener("click",()=>{
+    //Pegando os valores dos inputs pelo método value.
+    const usuario = {
+        email:"",
+        senha:""
+    }
+
+    let emailUser = document.querySelector("input[type=email]").value;
+    let senhaUser = document.querySelector("input[type=password]").value;
+
+    //Popular o objeto com os dados do usuário.
+    usuario.email = emailUser;
+    usuario.senha = senhaUser;
+
+    for (let x = 0; x < listaUsuarios.length; x++) {
+
+        if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
+            console.log("Usuário validado")
+        }
+    }
+})
