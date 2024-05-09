@@ -17,3 +17,21 @@ button[type=submit]{
   border-radius: 5px;
 }
 
+.sucesso{
+  color: green;
+  font-weight: 500;
+  font-size: 1.5 rem;
+  background-color: lightgreen;
+  text-align: center;
+  border: 2px solid green;
+}
+
+.erro{
+  color: red;
+  font-weight: 500;
+  font-size: 1.5 rem;
+  background-color: lightcoral;
+  text-align: center;
+  border: 2px solid red;
+}
+

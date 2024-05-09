@@ -32,7 +32,7 @@ Comentario de bloco
 // "use strict"
 //Hoisting
 
-var nome = "Joaquim"; // variável
+/* var nome = "Joaquim"; // variável
 
 if(true)
 {
@@ -45,7 +45,7 @@ console.log(nome);
 teste = "Olá"
 console.log(teste);
 
-var teste;
+var teste; */
 
 
 // Declaração de variáveis (var, let, const):
@@ -123,7 +123,7 @@ var teste;
 // let numero = parseInt(strNumero);
 // console.log(numero); // Saída: 10 (número)
 
-let strNumero = "10";
+/* let strNumero = "10";
 let numero = parseInt(strNumero);
 console.log(numero);
 
@@ -274,6 +274,9 @@ console.log(nome1);
 console.log(idade1);
 console.log(cidade1);
 console.log(pessoa)
+ */
+
+// Validação com objetos
 
 let listaUsuarios = [
     {email:"email@email.com",senha:"123456"},
@@ -282,27 +285,56 @@ let listaUsuarios = [
     {email:"maria@email.com",senha:"123456"}
 ];
 
-//Recuperar o botão de submit através da função querySelector.
+/* //Recuperar o botão de submit através da função querySelector.
 const btnSubmit = document.querySelector("button[type=submit]");
 //Atrelando o evento click ao botão.
 btnSubmit.addEventListener("click",()=>{
-    //Pegando os valores dos inputs pelo método value.
-    const usuario = {
-        email:"",
-        senha:""
-    }
-
+    
     let emailUser = document.querySelector("input[type=email]").value;
     let senhaUser = document.querySelector("input[type=password]").value;
-
+    
     //Popular o objeto com os dados do usuário.
     usuario.email = emailUser;
     usuario.senha = senhaUser;
+    
+})  */
+
+const validaLogin = (input1,input2)=> {
+    
+    //Pegando os valores dos inputs pelo método value.
+    const usuario = {
+        email:input1.value,
+        senha:input2.value
+    }
+    
+    const msgStatus = document.querySelector(".valida")
+
+
 
     for (let x = 0; x < listaUsuarios.length; x++) {
-
+        
         if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
-            console.log("Usuário validado")
+            
+            msgStatus.setAttribute("class", "sucesso")   ;  
+            msgStatus.innerText = "Login realizado com sucesso!";
+
+            setTimeout(()=>{
+                msgStatus.setAttribute("class", "valida")   ;  
+                msgStatus.innerText = "";
+            }, 3000);
+
+            return true;
         }
     }
-})
+    
+    
+    setTimeout(()=>{
+        msgStatus.setAttribute("class", "valida")   ;  
+        msgStatus.innerText = "";
+    }, 3000);
+    
+    msgStatus.setAttribute("class", "erro");
+        
+    msgStatus.innerText = "Login inválido!";
+    return false;
+}
