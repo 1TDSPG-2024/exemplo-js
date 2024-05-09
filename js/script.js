@@ -276,7 +276,9 @@ let listaUsuarios = [
 //     usuario.senha = senhaUser;
 // });
 
-const validaLogin = (input1, input2)=>{
+const validaLogin = (input1, input2, event)=>{
+
+    event.preventDefault();
 
     //Pegando os valores dos inputs pelo método value.
     const usuario = {
@@ -296,17 +298,21 @@ const validaLogin = (input1, input2)=>{
             setTimeout( ()=> {
                 msgStatus.setAttribute("class", "valida");
                 msgStatus.innerText = "";
+                window.location.href = "../status/sucesso.html";
             }, 3000);
 
-            return true;
+            return false;
         }
     }
+
+    msgStatus.setAttribute("class", "erro");
+    msgStatus.innerText = "Nome de usuário ou senha inválidos!"
+
     setTimeout( ()=> {
         msgStatus.setAttribute("class", "valida");
         msgStatus.innerText = "";
     }, 3000);
-    
-    msgStatus.setAttribute("class", "erro");
-    msgStatus.innerText = "Nome de usuário ou senha inválidos!"
+
+    window.location.href = "../status/erro.html";
     return false;
 }
