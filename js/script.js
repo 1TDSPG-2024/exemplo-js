@@ -301,7 +301,7 @@ usuario.senha = senhaUser;
 
 const validaLogin = (input1,input2, event)=> {
 
-    event.preventDefault();
+      event.preventDefault();
 
 //Pegando os valores dos inputs pelo método value.
     const usuario = {
@@ -314,8 +314,6 @@ const validaLogin = (input1,input2, event)=> {
     for (let x = 0; x < listaUsuarios.length; x++) {
         
         if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
-            
-            
 
             msgStatus.setAttribute("class", "sucesso");  
             msgStatus.innerText = "Login realizado com sucesso!";
@@ -323,23 +321,21 @@ const validaLogin = (input1,input2, event)=> {
             setTimeout(()=>{
                 msgStatus.setAttribute("class", "valida")   ;  
                 msgStatus.innerText = "";
-                windows.location.href = "../status/sucesso.html";
+                window.location.href = "../status/sucesso.html";
             }, 3000);
 
             return false;
         }
     }
 
+    msgStatus.setAttribute("class", "erro");
+    msgStatus.innerText = "Login inválido!";
+    setTimeout(()=>{
+    msgStatus.setAttribute("class", "valida")   ;  
+    msgStatus.innerText = "";
+    window.location.href = "../status/erro.html";
+    }, 3000);
 
 
-msgStatus.setAttribute("class", "erro");
-msgStatus.innerText = "Login inválido!";
-setTimeout(()=>{
-msgStatus.setAttribute("class", "valida")   ;  
-msgStatus.innerText = "";
-windows.location.href = "../status/erro.html";
-}, 3000);
-
-
-return false;
-}
+    return false;
+    };
