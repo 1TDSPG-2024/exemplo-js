@@ -205,11 +205,14 @@ let listaUsuarios = [
 
 
 const validaLogin = (input1, input2)=>{
+
+    event.preventDefault();
+
     //Pegando os valores dos inputs pelo método value.
     const usuario = {
-        email:input1.value,
-        senha:input2.value
-    }
+        email: input1.value,
+        senha: input2.value
+    };
     
     //recuperando elemento de mensagem
     const msgStatus = document.querySelector(".valida");
@@ -224,18 +227,22 @@ const validaLogin = (input1, input2)=>{
             setTimeout(()=>{
                 msgStatus.setAttribute("class","sucesso");
                 msgStatus.innerText = "Login realizado com sucesso!";
+                window.location.href = "../status/sucesso.html";
             }, 3000);
 
-            return true;
+            return false;
         }
     }
+    
+    msgStatus.setAttribute("class","Erro")
+    msgStatus.innerText = "Nome de usuário ou senha incorretos!";
+    
     setTimeout(()=>{
         msgStatus.setAttribute("class","Erro");
         msgStatus.innerText = "Nome de usuário ou senha incorretos!";
+        window.href = "../status/erro.html";
     }, 3000);
 
-
-    msgStatus.setAttribute("class","Erro")
-    msgStatus.innerText = "Nome de usuário ou senha incorretos!";
+    
     return false;
 }
