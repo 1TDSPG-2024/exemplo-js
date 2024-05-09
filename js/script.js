@@ -262,30 +262,51 @@ let listaUsuarios = [
 ];
 
 
-// Recuperar o botão de submit através da função querySelector.
-const btnSubmit = document.querySelector("button[type=submit]");
-//Atrelando o evento click ao botão.
-btnSubmit.addEventListener("click",()=>{
+// // Recuperar o botão de submit através da função querySelector.
+// const btnSubmit = document.querySelector("button[type=submit]");
+// //Atrelando o evento click ao botão.
+// btnSubmit.addEventListener("click",()=>{
+
+//     // O atributo VALUE que guarda a informação digitada no campo
+//     let emailUser = document.querySelector("input[type=email]").value;
+//     let senhaUser = document.querySelector("input[type=password]").value;
+    
+//     // Popular o objeto com os dados do usuário.
+//     usuario.email = emailUser;
+//     usuario.senha = senhaUser;
+// });
+
+const validaLogin = (input1, input2)=>{
+
     //Pegando os valores dos inputs pelo método value.
     const usuario = {
-        email:"",
-        senha:""
+        email:input1.value,
+        senha:input2.value
     }
 
-    // O atributo VALUE que guarda a informação digitada no campo
-    let emailUser = document.querySelector("input[type=email]").value;
-    let senhaUser = document.querySelector("input[type=password]").value;
-    
-    //Popular o objeto com os dados do usuário.
-    usuario.email = emailUser;
-    usuario.senha = senhaUser;
-
+    // Recuperando elemento de mensagem
+    const msgStatus = document.querySelector(".valida");
     for (let x = 0; x < listaUsuarios.length; x++) {
         
         if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
-            console.log("Usuário validado")
+
+            msgStatus.setAttribute("class", "sucesso");
+            msgStatus.innerText = "Login realizado com sucesso!"
+
+            setTimeout( ()=> {
+                msgStatus.setAttribute("class", "valida");
+                msgStatus.innerText = "";
+            }, 3000);
+
+            return true;
         }
     }
-
-
-})
+    setTimeout( ()=> {
+        msgStatus.setAttribute("class", "valida");
+        msgStatus.innerText = "";
+    }, 3000);
+    
+    msgStatus.setAttribute("class", "erro");
+    msgStatus.innerText = "Nome de usuário ou senha inválidos!"
+    return false;
+}
