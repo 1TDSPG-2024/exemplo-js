@@ -204,7 +204,8 @@ let listaUsuarios = [
 //     usuario.senha = senhaUser;
 // })
 
-const validaLogin = (input1, input2)=>{
+const validaLogin = (input1, input2,event)=>{
+    event.preventDefault()
     //pegando os valores dos inputs pelo método value.
     const usuario = {
         email: input1.value, 
@@ -222,8 +223,9 @@ const validaLogin = (input1, input2)=>{
             setTimeout(()=>{
             msgStatus.setAttribute("class","sucesso")
             msgStatus.innerText = ""
+            window.location.href = "../status/sucesso.html";
             },3000)
-            return true
+            return true;
         }
     }
     msgStatus.setAttribute("class","erro")
@@ -231,6 +233,7 @@ const validaLogin = (input1, input2)=>{
     setTimeout(()=>{
         msgStatus.setAttribute("class","erro")
         msgStatus.innerText = ""
+        window.location.href = "../status/erro.html";
         },3000)
     return false
 }
