@@ -14,4 +14,23 @@ button[type=submit]{
   color: white;
   font-size: 14px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.sucesso{
+  color: #0a840a;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: #7be87b;
+  text-align: center;
+  border: 2px solid #0a840a;
+}
+
+.erro{
+  color: #ff0000;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: #fb9898;
+  text-align: center;
+  border: 2px solid #ff0000;
 }

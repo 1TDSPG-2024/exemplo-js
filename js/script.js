@@ -191,24 +191,46 @@ let listaUsuarios = [
     {email: "email4@gmail.com", senha: "123456789"}
 ];
 //recuperar o botão de submit atraves da função querySelector
-const btnSubmit = document.querySelector("button[type=submit]");
-console.log(btnSubmit.innerHTML);
-//Atrelando evento click oa botão
-btnSubmit.addEventListener("click", ()=>{
+// const btnSubmit = document.querySelector("button[type=submit]");
+// console.log(btnSubmit.innerHTML);
+// //Atrelando evento click oa botão
+// btnSubmit.addEventListener("click", ()=>{
+
+//     let emailUser = document.querySelector("input[type=email]").value;
+//     let senhaUser = document.querySelector("input[type=password]").value;
+
+//     //Popular o objeto com os dados do usuário.
+//     usuario.email = emailUser;
+//     usuario.senha = senhaUser;
+// })
+
+const validaLogin = (input1, input2)=>{
     //pegando os valores dos inputs pelo método value.
-    const usuario = {email: "", senha: ""}
-
-    let emailUser = document.querySelector("input[type=email]").value;
-    let senhaUser = document.querySelector("input[type=password]").value;
-
-    //Popular o objeto com os dados do usuário.
-    usuario.email = emailUser;
-    usuario.senha = senhaUser;
+    const usuario = {
+        email: input1.value, 
+        senha: input2.value
+    }
+    
+    //recuperando elemento de mensagem
+    const msgStatus = document.querySelector(".valida");
 
     for (let x = 0; x < listaUsuarios.length; x++) {
+
         if(usuario.email === listaUsuarios[x].email && usuario.senha === listaUsuarios[x].senha){
-            console.log("Usuário validado")
+            msgStatus.setAttribute("class","sucesso")
+            msgStatus.innerText = "Login realizado com Sucesso!"
+            setTimeout(()=>{
+            msgStatus.setAttribute("class","sucesso")
+            msgStatus.innerText = ""
+            },3000)
+            return true
         }
     }
-
-})
+    msgStatus.setAttribute("class","erro")
+    msgStatus.innerText = "Nome de usuario ou senha incorretos!"
+    setTimeout(()=>{
+        msgStatus.setAttribute("class","erro")
+        msgStatus.innerText = ""
+        },3000)
+    return false
+}
