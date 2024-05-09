@@ -292,6 +292,7 @@ const validaLogin = (input1, input2, event)=>{
         
         if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
 
+                localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
             msgStatus.setAttribute("class", "sucesso");
             msgStatus.innerText = "Login realizado com sucesso!"
 
