@@ -19,12 +19,12 @@ Comentario de bloco
 // Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função
 
 /* btn.addEventListener("click", function(){
-    console.log(this); // Enxerga o elemento como um objeto
+console.log(this); // Enxerga o elemento como um objeto
 }); 
- */
+*/
 
 /* btn.addEventListener("click", ()=>{  
-    console.log(this); // Não "enxerga" elemento como um objeto, classe. Não associa
+console.log(this); // Não "enxerga" elemento como um objeto, classe. Não associa
 }); */
 
 
@@ -36,7 +36,7 @@ Comentario de bloco
 
 if(true)
 {
-    let nome = "João"; // Hoisting, Let respeita o escopo 
+let nome = "João"; // Hoisting, Let respeita o escopo 
 }
 
 console.log(nome);
@@ -159,7 +159,7 @@ console.log(booleano);
 
 var nome = "Joaquim" // variável definida em escopo global
 if (true){
-    let nome = "João"; // Let respeita o escopo local
+let nome = "João"; // Let respeita o escopo local
 }
 console.log(nome); // Chamando escopo global
 
@@ -222,9 +222,9 @@ console.log(result);
 let age = 17;
 
 if (age >= 18) {
-        console.log("Maior de idade");
- } else {
-    console.log("Menor de idade");
+    console.log("Maior de idade");
+} else {
+console.log("Menor de idade");
 }
 
 // Exercício 10 - Mesclar Arrays com Spread:
@@ -274,67 +274,72 @@ console.log(nome1);
 console.log(idade1);
 console.log(cidade1);
 console.log(pessoa)
- */
+*/
 
 // Validação com objetos
 
 let listaUsuarios = [
-    {email:"email@email.com",senha:"123456"},
-    {email:"jose@email.com",senha:"123456"},
-    {email:"joao@email.com",senha:"123456"},
-    {email:"maria@email.com",senha:"123456"}
+{email:"email@email.com",senha:"123456"},
+{email:"jose@email.com",senha:"123456"},
+{email:"joao@email.com",senha:"123456"},
+{email:"maria@email.com",senha:"123456"}
 ];
 
 /* //Recuperar o botão de submit através da função querySelector.
 const btnSubmit = document.querySelector("button[type=submit]");
 //Atrelando o evento click ao botão.
 btnSubmit.addEventListener("click",()=>{
-    
-    let emailUser = document.querySelector("input[type=email]").value;
-    let senhaUser = document.querySelector("input[type=password]").value;
-    
-    //Popular o objeto com os dados do usuário.
-    usuario.email = emailUser;
-    usuario.senha = senhaUser;
-    
+
+let emailUser = document.querySelector("input[type=email]").value;
+let senhaUser = document.querySelector("input[type=password]").value;
+
+//Popular o objeto com os dados do usuário.
+usuario.email = emailUser;
+usuario.senha = senhaUser;
+
 })  */
 
-const validaLogin = (input1,input2)=> {
-    
-    //Pegando os valores dos inputs pelo método value.
+const validaLogin = (input1,input2, event)=> {
+
+    event.preventDefault();
+
+//Pegando os valores dos inputs pelo método value.
     const usuario = {
         email:input1.value,
         senha:input2.value
     }
-    
-    const msgStatus = document.querySelector(".valida")
 
-
+    const msgStatus = document.querySelector(".valida");
 
     for (let x = 0; x < listaUsuarios.length; x++) {
         
         if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
             
-            msgStatus.setAttribute("class", "sucesso")   ;  
+            
+
+            msgStatus.setAttribute("class", "sucesso");  
             msgStatus.innerText = "Login realizado com sucesso!";
 
             setTimeout(()=>{
                 msgStatus.setAttribute("class", "valida")   ;  
                 msgStatus.innerText = "";
+                windows.location.href = "../status/sucesso.html";
             }, 3000);
 
-            return true;
+            return false;
         }
     }
-    
-    
-    setTimeout(()=>{
-        msgStatus.setAttribute("class", "valida")   ;  
-        msgStatus.innerText = "";
-    }, 3000);
-    
-    msgStatus.setAttribute("class", "erro");
-        
-    msgStatus.innerText = "Login inválido!";
-    return false;
+
+
+
+msgStatus.setAttribute("class", "erro");
+msgStatus.innerText = "Login inválido!";
+setTimeout(()=>{
+msgStatus.setAttribute("class", "valida")   ;  
+msgStatus.innerText = "";
+windows.location.href = "../status/erro.html";
+}, 3000);
+
+
+return false;
 }
