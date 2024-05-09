@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilo.css" />
     <title>JavaScript</title>
-    
-    <script src="./js/script.js" defer></script>
 
+    <script src="./js/script.js" defer></script>
   </head>
 
   <body>
@@ -24,8 +23,13 @@
 
     <div>
       <h2>VALIDAÇÃO</h2>
+      <p class="valida"></p>
       <div>
-        <form action="#" method="post" onsubmit="return false">
+        <form
+          action="#"
+          method="get"
+          onsubmit="return validaLogin(idEmail, idSenha, event)"
+        >
           <fieldset>
             <legend>LOGIN</legend>
             <div>
@@ -57,11 +61,7 @@
               <label for="idLembrar">Lembrar-me</label>
             </div>
             <div>
-              <button
-                type="submit"
-              >
-                Enviar
-              </button>
+              <button type="submit">Enviar</button>
             </div>
           </fieldset>
         </form>

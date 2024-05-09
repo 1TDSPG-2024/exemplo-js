@@ -19,14 +19,13 @@ console.info("Informação");
 //   console.log(this); //Não enxerga, não associa o elemento;
 // });
 
-
 ("use strict");
 //Hoisting
 // var nome = "Joaquim";
 
 // if(true)
 // {
-//     let nome = "João"; 
+//     let nome = "João";
 // }
 
 // console.log(nome);
@@ -118,10 +117,10 @@ console.info("Informação");
 
 // Exercício 1 - Variáveis e Hoisting:
 // Qual será o valor de nome após a execução do código abaixo?
-"use strict";
+("use strict");
 var nome = "Joaquim";
 if (true) {
-    let nome = "João";
+  let nome = "João";
 }
 console.log(nome);
 //RESPOSTA: Joaquim (Respeita o escopo)
@@ -144,7 +143,7 @@ let str = "Olá, mundo!";
 let arr1 = [1, 2, 3, 4, 5];
 let arr2 = [6, 7, 8, 9, 10];
 // let arrConcatenado = [...arr1, ...arr2];
-let arrConcatenado = arr1.concat(arr2)
+let arrConcatenado = arr1.concat(arr2);
 console.log(arrConcatenado);
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
@@ -178,37 +177,74 @@ console.log(obj.idade); // Saída: 25
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
 
 let listaUsuarios = [
-  {email:"email@email.com",senha:"123456"},
-  {email:"jose@email.com",senha:"123456"},
-  {email:"joao@email.com",senha:"123456"},
-  {email:"maria@email.com",senha:"123456"},
-]
+  { email: "email@email.com", senha: "123456" },
+  { email: "jose@email.com", senha: "123456" },
+  { email: "joao@email.com", senha: "123456" },
+  { email: "maria@email.com", senha: "123456" },
+];
 
-//Recuperar o botão submit atráves da função querySelector.
-const btnSubmit = document.querySelector("button[type=submit]")
-//Atrelando o evento click ao botão.
-btnSubmit.addEventListener("click", () =>{
-  // console.log(btnSubmit.innerHTML);
-  //Pegando os valores dos inputs pelo método value
+// //Recuperar o botão submit atráves da função querySelector.
+// const btnSubmit = document.querySelector("button[type=submit]")
+// //Atrelando o evento click ao botão.
+// btnSubmit.addEventListener("click", () =>{
+//   // console.log(btnSubmit.innerHTML);
+//   //Pegando os valores dos inputs pelo método value
+
+//   let emailUser = document.querySelector("input[type=email]").value;
+//   let senhaUser = document.querySelector("input[type=password]").value;
+
+//   // console.log(emailUser);
+//   // console.log(senhaUser);
+
+//   //Popular o objeto com os dados do usuário
+//   usuario.email = emailUser
+//   usuario.email = senhaUser
+
+// })
+
+const validaLogin = (input1, input2, event) => {
+
+    event.preventDefault()
+
+  //Pegando os valores dos inputs pelo método value.
   const usuario = {
-      email:"",
-      senha:""
-  }
+    email: input1.value,
+    senha: input2.value,
+  };
 
-  let emailUser = document.querySelector("input[type=email]").value;
-  let senhaUser = document.querySelector("input[type=password]").value; 
-  
-  // console.log(emailUser);
-  // console.log(senhaUser);
-
-  usuario.email = emailUser
-  usuario.email = senhaUser
+  //Recuperando elemento de mensagem
+  const msgStatus = document.querySelector(".valida");
 
   for (let x = 0; x < listaUsuarios.length; x++) {
-    if(usuario.email === listaUsuarios[x].email && usuario.senha === listaUsuarios[x].senha) {
-      console.log("Usuário validado");
-    } else {
-      console.log("Usuário inválido")
+    if (
+      usuario.email === listaUsuarios[x].email &&
+      usuario.senha === listaUsuarios[x].senha
+    ) {
+
+        localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
+
+      msgStatus.setAttribute("class", "sucesso");
+      msgStatus.innerText = "Login realizado com Sucesso!";
+
+      setTimeout(() => {
+        msgStatus.setAttribute("class", "valida");
+        msgStatus.innerText = "";
+        window.location.href = "../status/sucesso.html";
+      }, 3000);
+
+      return true;
     }
   }
-})
+
+  setTimeout(() => {
+    msgStatus.setAttribute("class", "valida");
+    msgStatus.innerText = "";
+    window.location.href = "../status/erro.html";
+  }, 3000);
+
+  msgStatus.setAttribute("class", "erro");
+  msgStatus.innerText = "Nome do usuário ou senha incorretos!";
+  // console.log("Usuário não validado!")
+
+  return false;
+};
