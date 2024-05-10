@@ -8,7 +8,7 @@ Comentário de bloco
 // console.warn("Aviso");
 // console.info("Informação");
 
-//Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante.
+// //Recuperando o botão submit com a função getElementById(id) e guardando ele em uma constante.
 // const btn = document.getElementById("btnSubmit");
 //Atrelar um evento ao botão, no caso, ao clicar no botão, ele vai executar a função.
 
@@ -25,43 +25,45 @@ Comentário de bloco
 // let nome = "Alexandre";
 
 // if(true)
-//     {
-//         let nome = "João";
-//     }
-    
-//     console.log(nome);
-    
-//     teste = "Olá";
-//     console.log(teste);
-    
-//     var teste;
-
+// {
+//     let nome = "João";
+// }
+// console.log(nome);
+// teste = "Olá";
+// console.log(teste);
+// var teste;
 // Declaração de variáveis (var, let, const):
-// Usando var
-//  var x = 10;
-//  console.log(x);
-
-// // Usando let
-//  let y = 20;
-//  console.log(y);
-
-// // Usando const (constante, valor não pode ser alterado)
+// // Usando var
+// var x = 10;
+// console.log(x);
+// // // Usando let
+// let y = 20;
+// console.log(y);
+// // // Usando const (constante, valor não pode ser alterado)
 // const z = 30;
 // console.log(z);
-//  z = 20;
-
+// // z = 20;
 // Tipos de dados em JavaScript:
 
 // // Number
-//  let num = 10;
-//  console.log(num);
+// let num = 10;
+// console.log(num);
 
-// // // String
-// let str = "Olá, mundo!";
+// // String
 // console.log(str.charAt(0));
-// console.log(str.indexOf("Olá"));
+// console.log(str.indexOf("mundo"));
+
+// //console.log(str.slice(5, 7))
+// console.log(str.indexOf("zureta"))
+// console.log(str.slice(924, 930))
+/* let m = console.log(str.charAt(5));
+let u = console.log(str.charAt(6));
+let mu = m + u;
+let u = console.log(str.charAt(6));
+let mu = m + u; */
 
 // // Boolean
+
 // let bool = true;
 // console.log(bool);
 
@@ -125,7 +127,7 @@ Comentário de bloco
 
 // Exercício 1 - Variáveis e Hoisting:
 // Qual será o valor de nome após a execução do código abaixo?
-"use strict"
+// "use strict";
 // var nome = "Joaquim";
 // if (true) {
 //     let nome = "João";
@@ -138,8 +140,7 @@ Comentário de bloco
 // Declare uma variável estrito utilizando let sem atribuir um valor. Imprima o valor de estrito no console.
 
 // let estrito;
-// console.log(estrito); // Saída: undefined
-
+// console.log(estrito);
 // Exercício 3 - Tipos de Dados:
 // Qual é o tipo de dado da variável str?
 // let str = "Olá, mundo!";
@@ -187,39 +188,72 @@ Comentário de bloco
 // } else {
 //     console.log("Menor de idade");
 // }
-
-// Maior de idade
-
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
-// let arr4 = [...arr1, ...arr2];
+let listaUsuarios = [
+    {email:"email@email.com",senha:"123456"},
+    {email:"jose@email.com",senha:"123456"},
+    {email:"joao@email.com",senha:"123456"},
+    {email:"maria@email.com",senha:"123456"}
+];
 
-let listaUsuarios = {
-    email : "email@email.com",senha: "123456"
-}
 
-//Recuperar o botão de submit através da função querySelector.
-const btnSubmit = document.querySelector("button[type=submit]");
-//Atrelando o evento click ao botão.
-btnSubmit.addEventListener("click",()=>{
+// //Recuperar o botão de submit através da função querySelector.
+// const btnSubmit = document.querySelector("button[type=submit]");
+// //Atrelando o evento click ao botão.
+// btnSubmit.addEventListener("click",()=>{
+
+//     let emailUser = document.querySelector("input[type=email]").value;
+//     let senhaUser = document.querySelector("input[type=password]").value;
+
+//     //Popular o objeto com os dados do usuário.
+//     usuario.email = emailUser;
+//     usuario.senha = senhaUser;
+
+// });
+
+const validaLogin = (input1,input2)=>{
     //Pegando os valores dos inputs pelo método value.
     const usuario = {
-        email:"",
-        senha:""
+        email:input1.value,
+        senha:input2.value
     }
 
-  let emailUser = document.querySelector("input[type=email]").value;  
-  let senhaUser = document.querySelector("input[type=password]").value;
-  
-  //Popular o objeto com os dados do usuario
+    
+    //Recuperando elemento de mensagem.
+    const msgStatus = document.querySelector(".valida");
+
+
 
   usuario.email = emailUser;
   usuario.senha = senhaUser;
+   
+  usuario.email = emailUser;
+  usuario.senha = senhaUser;
 
-  for (let x = 0; x < listaUsuarios.length; x++) {
-        
-    if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
-        console.log("Usuário validado")
+    for (let x = 0; x < listaUsuarios.length; x++) {
+
+        if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
+            
+
+            msgStatus.setAttribute("class","sucesso");
+            msgStatus.innerText = "Login realizado com Sucesso!";
+
+            setTimeout(()=>{
+                msgStatus.setAttribute("class","valida");
+                msgStatus.innerText = "";
+            }, 3000);
+
+            return true;
+        }
     }
+
+    setTimeout(()=>{
+        msgStatus.setAttribute("class","valida");
+        msgStatus.innerText = "";
+    }, 3000);
+
+    msgStatus.setAttribute("class","erro");
+    msgStatus.innerText = "Nome de usuario ou senha incoretos!";
+    return false;
 }
-})
