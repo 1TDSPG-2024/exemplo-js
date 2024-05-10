@@ -243,6 +243,11 @@ const validaLogin = (input1, input2, event) => {
     ) {
 
     localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
+      
+    //criar String-token e colocar no sessionStorage
+    const userToken = Math.random().toString(16).substring(2);  
+    //Criando o token e colocando no sessionStorage.
+    sessionStorage.setItem("token",userToken);
 
       msgStatus.setAttribute("class", "sucesso");
       msgStatus.innerText = "Login realizado com Sucesso!";
