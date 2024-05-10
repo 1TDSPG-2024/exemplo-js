@@ -17,7 +17,7 @@ if(tokenUser != ""){
         
         window.location.href = "../index.html";
     });
-}else{
+} else {
     window.location.href = "../index.html";
 }
 
