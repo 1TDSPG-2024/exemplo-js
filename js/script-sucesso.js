@@ -1,10 +1,9 @@
 
+let tokenUser = sessionStorage.getItem("item")
 
+if(tokenUser != ""){
 //Recuperando o objeto do localStorage
 const usuario = JSON.parse(localStorage.getItem("usuario-logado"));
-
-
-if(usuario){
     //Mensagem de Boas Vindas
     const msgWelcome = document.querySelector("#msg-welcome");
     msgWelcome.innerText = usuario.email;
@@ -13,10 +12,11 @@ if(usuario){
     const logoutUser = document.querySelector("#logout-user");
     logoutUser.addEventListener("click", ()=>{
         localStorage.removeItem("usuario-logado");
-        
+        sessionStorage.removeItem("token")
+
         window.location.href = "../index.html";
     });
-}else{
+} else {
     window.location.href = "../index.html";
 }
 
