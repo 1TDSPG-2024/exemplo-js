@@ -1,11 +1,13 @@
 
 
 //Recuperando o objeto do localStorage
-const usuario = JSON.parse(localStorage.getItem("usuario-logado"));
+let tokenUser = sessionStorage.getItem("token");
 
 
-if(usuario){
+
+if(tokenUser != ""){
     //Mensagem de Boas Vindas
+    const usuario = JSON.parse(localStorage.getItem("usuario-logado"));
     const msgWelcome = document.querySelector("#msg-welcome");
     msgWelcome.innerText = usuario.email;
 
@@ -13,7 +15,7 @@ if(usuario){
     const logoutUser = document.querySelector("#logout-user");
     logoutUser.addEventListener("click", ()=>{
         localStorage.removeItem("usuario-logado");
-        
+        localStorage.clear
         window.location.href = "../index.html";
     });
 }else{

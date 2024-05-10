@@ -245,6 +245,11 @@ let listaUsuarios = [
   
       localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
   
+      //Criar um String-token e colocar no sessionStoarge
+      const userToken = Math.random().toString(16).substring(2);
+  
+      sessionStorage.setItem("token",userToken);
+  
         msgStatus.setAttribute("class", "sucesso");
         msgStatus.innerText = "Login realizado com Sucesso!";
   
