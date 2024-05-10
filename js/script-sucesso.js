@@ -14,8 +14,8 @@ if(tokenUser != ""){
     //LOGOUT
     const logoutUser = document.querySelector("#logout-user");
     logoutUser.addEventListener("click", ()=>{
-        localStorage.removeItem("usuario-logado");
-        localStorage.clear
+        sessionStorage.removeItem("token");
+        // localStorage.clear
         window.location.href = "../index.html";
     });
 }else{
