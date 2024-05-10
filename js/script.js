@@ -197,32 +197,6 @@ let listaUsuarios = [
 
 // });
 
-
-//apresentação da senha
-function apresentaSenha(input2,) {
-
-  if(input2.type == "password"){
-      input2.setAttribute("type","text");
-  }else{
-      input2.setAttribute("type","password");
-  }
-}
-
-let eyeIcon = document.querySelector("i");
-
-eyeIcon.addEventListener("click", function(){ 
-    //Carregando o input senha:
-    const inputSenha = document.querySelector("#idSenha");
-
-    if(this.className == "fa-regular fa-eye"){
-        this.setAttribute("class","fa-regular fa-eye-slash");
-        apresentaSenha(inputSenha);
-    }else{
-        this.setAttribute("class","fa-regular fa-eye");
-        apresentaSenha(inputSenha);
-    }
-});
-
 const validaLogin = (input1, input2, event) => {
 
     event.preventDefault();
@@ -243,12 +217,6 @@ const validaLogin = (input1, input2, event) => {
     ) {
 
     localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
-
-
-    //Criar uma String-token e colocar no sessionStoarge
-    const userToken = Math.random().toString(16).substring(2);
-    // Criando o token e colocando no sessionStoarge
-    sessionStorage.setItem("token",userToken);
 
       msgStatus.setAttribute("class", "sucesso");
       msgStatus.innerText = "Login realizado com Sucesso!";
