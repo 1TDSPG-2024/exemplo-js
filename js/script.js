@@ -1,4 +1,3 @@
-
 //Comentário de linha
 /*
 Comentário de bloco
@@ -103,7 +102,6 @@ let mu = m + u; */
 // console.log(idade);
 // console.log(cidade);
 
-
 // // EXERCÍCIOS
 
 // // Conversão entre tipos de dados:
@@ -147,13 +145,11 @@ let mu = m + u; */
 
 // String
 
-
 // Exercício 4 - Mesclar Arrays:
 // Crie um novo array chamado arrConcatenado que seja a concatenação dos arrays arr1 e arr2. Imprima arrConcatenado no console.
 
 // let arrConcatenado = arr1.concat(arr2);
 // console.log(arrConcatenado)
-
 
 // Exercício 5 - Acesso a Propriedades de Objetos:
 // Acesse a propriedade idade do objeto obj e imprima seu valor no console.
@@ -164,7 +160,6 @@ let mu = m + u; */
 // Atribua a string "São Paulo" à propriedade cidade do objeto obj. Imprima obj no console.
 // obj = {...obj, cidade: "São Paulo"};
 // console.log(obj);
-
 
 // Exercício 7 - Conversão de String para Número:
 // Converta a string "10" em um número e imprima o resultado no console.
@@ -191,12 +186,11 @@ let mu = m + u; */
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
 let listaUsuarios = [
-    { email: "email@email.com", senha: "123456" },
-    { email: "jose@email.com", senha: "123456" },
-    { email: "joao@email.com", senha: "123456" },
-    { email: "maria@email.com", senha: "123456" },
+  { email: "email@email.com", senha: "123456" },
+  { email: "jose@email.com", senha: "123456" },
+  { email: "joao@email.com", senha: "123456" },
+  { email: "maria@email.com", senha: "123456" },
 ];
-
 
 // //Recuperar o botão de submit através da função querySelector.
 // const btnSubmit = document.querySelector("button[type=submit]");
@@ -212,44 +206,47 @@ let listaUsuarios = [
 
 // });
 
-const validaLogin = (input1,input2, event)=>{
-    event.preventDefault();
+const validaLogin = (input1, input2, event) => {
+  event.preventDefault();
 
-    //Pegando os valores dos inputs pelo método value.
-    const usuario = {
-      email: input1.value,
-      senha: input2.value,
-    };
-  
-    //Recuperando elemento de mensagem.
-    const msgStatus = document.querySelector(".valida");
-  
-    for (let x = 0; x < listaUsuarios.length; x++) {
-      if (
-        usuario.email === listaUsuarios[x].email &&
-        usuario.senha === listaUsuarios[x].senha
-      ) {
-        msgStatus.setAttribute("class", "sucesso");
-        msgStatus.innerText = "Login realizado com Sucesso!";
-  
-        setTimeout(() => {
-          msgStatus.setAttribute("class", "valida");
-          msgStatus.innerText = "";
-          window.location.href = "../status/sucesso.html";
-        }, 3000);
-  
-        return true;
-      }
-    }
-  
-    msgStatus.setAttribute("class", "erro");
-    msgStatus.innerText = "Nome de usuario ou senha incoretos!";
+  //Pegando os valores dos inputs pelo método value.
+  const usuario = {
+    email: input1.value,
+    senha: input2.value,
+  };
 
-    setTimeout(() => {
+  //Recuperando elemento de mensagem.
+  const msgStatus = document.querySelector(".valida");
+
+  for (let x = 0; x < listaUsuarios.length; x++) {
+    if (
+      usuario.email === listaUsuarios[x].email &&
+      usuario.senha === listaUsuarios[x].senha
+    ) {
+      localStorage.setItem("usuario-logado", 
+      JSON.stringify(listaUsuarios[x]));
+
+      msgStatus.setAttribute("class", "sucesso");
+      msgStatus.innerText = "Login realizado com Sucesso!";
+
+      setTimeout(() => {
         msgStatus.setAttribute("class", "valida");
         msgStatus.innerText = "";
-        window.location.href = "../status/erro.html";
+        window.location.href = "../status/sucesso.html";
       }, 3000);
-    
-      return false;
-    };
+
+      return true;
+    }
+  }
+
+  msgStatus.setAttribute("class", "erro");
+  msgStatus.innerText = "Nome de usuario ou senha incoretos!";
+
+  setTimeout(() => {
+    msgStatus.setAttribute("class", "valida");
+    msgStatus.innerText = "";
+    window.location.href = "../status/erro.html";
+  }, 3000);
+
+  return false;
+};
