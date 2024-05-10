@@ -1,10 +1,11 @@
 
 
-//Recuperando o objeto do localStorage
-const usuario = JSON.parse(localStorage.getItem("usuario-logado"));
+//Recuperando o token do usuário
+let tokenUser = sessionStorage.getItem("token");
 
-
-if(usuario){
+if(tokenUser != ""){
+    //Recuperando o objeto do localStorage
+    const usuario = JSON.parse(localStorage.getItem("usuario-logado"));
     //Mensagem de Boas Vindas
     const msgWelcome = document.querySelector("#msg-welcome");
     msgWelcome.innerText = usuario.email;
