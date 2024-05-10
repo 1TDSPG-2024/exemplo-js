@@ -1,18 +1,37 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 button[type=submit]{
-  background-color: #185324;
-  border: none;
-  height: 10vh;
-  width: 10vw;
-  display: block;
-  margin: 0 auto;
-  color: white;
-  font-size: 14px;
-  border-radius: 5px;
-  
+background: #185324;
+border: none;
+height: 10vh;
+width: 10vw;
+display: block;
+margin: 0 auto;
+color: white;
+font-size: 14px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+
+.sucesso{
+color: #0a840a;
+font-weight: 500;
+font-size: 1.5rem;
+background-color: #7be87b;
+text-align: center;
+border: 2px solid #0a840a;
+}
+
+.erro{
+color: #ff0000;
+font-weight: 500;
+font-size: 1.5rem;
+background-color: #fb9898;
+text-align: center;
+border: 2px solid #ff0000;
 }
