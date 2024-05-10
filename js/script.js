@@ -191,10 +191,10 @@ let mu = m + u; */
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
 let listaUsuarios = [
-    {email:"email@email.com",senha:"123456"},
-    {email:"jose@email.com",senha:"123456"},
-    {email:"joao@email.com",senha:"123456"},
-    {email:"maria@email.com",senha:"123456"}
+    { email: "email@email.com", senha: "123456" },
+    { email: "jose@email.com", senha: "123456" },
+    { email: "joao@email.com", senha: "123456" },
+    { email: "maria@email.com", senha: "123456" },
 ];
 
 
@@ -212,48 +212,44 @@ let listaUsuarios = [
 
 // });
 
-const validaLogin = (input1,input2)=>{
+const validaLogin = (input1,input2, event)=>{
+    event.preventDefault();
+
     //Pegando os valores dos inputs pelo método value.
     const usuario = {
-        email:input1.value,
-        senha:input2.value
-    }
-
-    
+      email: input1.value,
+      senha: input2.value,
+    };
+  
     //Recuperando elemento de mensagem.
     const msgStatus = document.querySelector(".valida");
-
-
-
-  usuario.email = emailUser;
-  usuario.senha = senhaUser;
-   
-  usuario.email = emailUser;
-  usuario.senha = senhaUser;
-
+  
     for (let x = 0; x < listaUsuarios.length; x++) {
-
-        if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
-            
-
-            msgStatus.setAttribute("class","sucesso");
-            msgStatus.innerText = "Login realizado com Sucesso!";
-
-            setTimeout(()=>{
-                msgStatus.setAttribute("class","valida");
-                msgStatus.innerText = "";
-            }, 3000);
-
-            return true;
-        }
+      if (
+        usuario.email === listaUsuarios[x].email &&
+        usuario.senha === listaUsuarios[x].senha
+      ) {
+        msgStatus.setAttribute("class", "sucesso");
+        msgStatus.innerText = "Login realizado com Sucesso!";
+  
+        setTimeout(() => {
+          msgStatus.setAttribute("class", "valida");
+          msgStatus.innerText = "";
+          window.location.href = "../status/sucesso.html";
+        }, 3000);
+  
+        return true;
+      }
     }
-
-    setTimeout(()=>{
-        msgStatus.setAttribute("class","valida");
-        msgStatus.innerText = "";
-    }, 3000);
-
-    msgStatus.setAttribute("class","erro");
+  
+    msgStatus.setAttribute("class", "erro");
     msgStatus.innerText = "Nome de usuario ou senha incoretos!";
-    return false;
-}
+
+    setTimeout(() => {
+        msgStatus.setAttribute("class", "valida");
+        msgStatus.innerText = "";
+        window.location.href = "../status/erro.html";
+      }, 3000);
+    
+      return false;
+    };
