@@ -197,6 +197,32 @@ let listaUsuarios = [
 
 // });
 
+
+//apresentação da senha
+function apresentaSenha(input2,) {
+
+  if(input2.type == "password"){
+      input2.setAttribute("type","text");
+  }else{
+      input2.setAttribute("type","password");
+  }
+}
+
+let eyeIcon = document.querySelector("i");
+
+eyeIcon.addEventListener("click", function(){ 
+    //Carregando o input senha:
+    const inputSenha = document.querySelector("#idSenha");
+
+    if(this.className == "fa-regular fa-eye"){
+        this.setAttribute("class","fa-regular fa-eye-slash");
+        apresentaSenha(inputSenha);
+    }else{
+        this.setAttribute("class","fa-regular fa-eye");
+        apresentaSenha(inputSenha);
+    }
+});
+
 const validaLogin = (input1, input2, event) => {
 
     event.preventDefault();
