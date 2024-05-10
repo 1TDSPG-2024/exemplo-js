@@ -244,17 +244,10 @@ const validaLogin = (input1, input2, event) => {
 
     localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
 
-<<<<<<< HEAD
     //Criar um String-token e colocar no sessionStoarge
     const userToken = Math.random().toString(16).substring(2);
     //Criando o token e colocando no sessionStorage.
     sessionStorage.setItem("token",userToken);
-=======
-      //Criar um string-token e colocar no sessionStorage
-      const userToken = Math.random(16).toString(16).substring(2);
-      //Criando o tokene colocando no sessionStorage
-      sessionStorage.setItem("token",userToken);
->>>>>>> 38f07ab120da1caeaa23728bde810018fc65ee77
 
       msgStatus.setAttribute("class", "sucesso");
       msgStatus.innerText = "Login realizado com Sucesso!";
