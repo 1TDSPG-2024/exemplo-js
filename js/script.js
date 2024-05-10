@@ -237,7 +237,7 @@ const validaLogin = (input1, input2,event)=>{
     const usuario = {
         email: input1.value, 
         senha: input2.value
-    }
+    };
     
     //recuperando elemento de mensagem
     const msgStatus = document.querySelector(".valida");
@@ -246,24 +246,29 @@ const validaLogin = (input1, input2,event)=>{
 
         if(usuario.email === listaUsuarios[x].email && usuario.senha === listaUsuarios[x].senha){
             
-            localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]))
+            localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
             
-            msgStatus.setAttribute("class","sucesso")
-            msgStatus.innerText = "Login realizado com Sucesso!"
+            //criar um string-token e colocar no local sessionStorage
+            const usertoken = Math.random().toString(16).substring(2);
+            //Criando o token e colocando o session Storage
+            sessionStorage.setItem("token", usertoken);
+
+            msgStatus.setAttribute("class","sucesso");
+            msgStatus.innerText = "Login realizado com Sucesso!";
             setTimeout(()=>{
-            msgStatus.setAttribute("class","sucesso")
-            msgStatus.innerText = ""
+            msgStatus.setAttribute("class","sucesso");
+            msgStatus.innerText = "";
             window.location.href = "../status/sucesso.html";
-            },3000)
+            },3000);
             return true;
-        }
-    }
-    msgStatus.setAttribute("class","erro")
-    msgStatus.innerText = "Nome de usuario ou senha incorretos!"
+        };
+    };
+    msgStatus.setAttribute("class","erro");
+    msgStatus.innerText = "Nome de usuario ou senha incorretos!";
     setTimeout(()=>{
-        msgStatus.setAttribute("class","erro")
-        msgStatus.innerText = ""
+        msgStatus.setAttribute("class","erro");
+        msgStatus.innerText = "";
         window.location.href = "../status/erro.html";
-        },3000)
-    return false
+        },3000);
+    return false;
 }
