@@ -34,3 +34,8 @@ button[type=submit]{
   text-align: center;
   border: 2px solid red;
 }
+
+.fa-regular{
+  cursor: pointer;
+  user-select: none;
+}
