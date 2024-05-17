@@ -1,23 +1,25 @@
 
-
-//Recuperando o objeto do localStorage
+//Recuperando o tooken do usuario
 let tokenUser = sessionStorage.getItem("token");
 
 
 
-if(tokenUser != ""){
+//Recuperando o objeto do localStorage
+const usuario = JSON.parse(localStorage.getItem("usuario-logado"));
+
+
+if(usuario){
     //Mensagem de Boas Vindas
-    const usuario = JSON.parse(localStorage.getItem("usuario-logado"));
     const msgWelcome = document.querySelector("#msg-welcome");
     msgWelcome.innerText = usuario.email;
 
     //LOGOUT
     const logoutUser = document.querySelector("#logout-user");
     logoutUser.addEventListener("click", ()=>{
-        sessionStorage.removeItem("token");
-        // localStorage.clear
+        localStorage.removeItem("usuario-logado");
+        
         window.location.href = "../index.html";
     });
-}else{
+} else {
     window.location.href = "../index.html";
 }
