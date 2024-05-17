@@ -177,101 +177,71 @@ let mu = m + u; */
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
 
 let listaUsuarios = [
-    { email: "email@email.com", senha: "123456" },
-    { email: "jose@email.com", senha: "123456" },
-    { email: "joao@email.com", senha: "123456" },
-    { email: "maria@email.com", senha: "123456" },
-  ];
-  
-  // //Recuperar o botão de submit através da função querySelector.
-  // const btnSubmit = document.querySelector("button[type=submit]");
-  // //Atrelando o evento click ao botão.
-  // btnSubmit.addEventListener("click",()=>{
-  
-  //     let emailUser = document.querySelector("input[type=email]").value;
-  //     let senhaUser = document.querySelector("input[type=password]").value;
-  
-  //     //Popular o objeto com os dados do usuário.
-  //     usuario.email = emailUser;
-  //     usuario.senha = senhaUser;
-  
-  // });
-  
-  //Apresentação da senha
-  function apresentaSenha(input2) {
-  
-      if(input2.type == "password"){
-          input2.setAttribute("type","text");
-      }else{
-          input2.setAttribute("type","password");
-      }
-  }
-  
-  let eyeIcon = document.querySelector("i");
-  
-  eyeIcon.addEventListener("click", function(){ 
-      //Carregando o input senha:
-      const inputSenha = document.querySelector("#idSenha");
-  
-      if(this.className == "fa-regular fa-eye"){
-          this.setAttribute("class","fa-regular fa-eye-slash");
-          apresentaSenha(inputSenha);
-      }else{
-          this.setAttribute("class","fa-regular fa-eye");
-          apresentaSenha(inputSenha);
-      }
-  });
-  
-  const validaLogin = (input1, input2, event) => {
-  
-      event.preventDefault();
-  
-    //Pegando os valores dos inputs pelo método value.
-    const usuario = {
-      email: input1.value,
-      senha: input2.value,
-    };
-  
-  
-  
-    //Recuperando elemento de mensagem.
-    const msgStatus = document.querySelector(".valida");
-  
-    for (let x = 0; x < listaUsuarios.length; x++) {
-      if (
-        usuario.email === listaUsuarios[x].email &&
-        usuario.senha === listaUsuarios[x].senha
-      ) {
-  
-      localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
-  
-      //Criar um String-token e colocar no sessionStoarge
-      const userToken = Math.random().toString(16).substring(2);
-      //Criando o token e colocando no sessionStorage.
-      sessionStorage.setItem("token",userToken);
-  
-        msgStatus.setAttribute("class", "sucesso");
-        msgStatus.innerText = "Login realizado com Sucesso!";
-  
-        setTimeout(() => {
-          msgStatus.setAttribute("class", "valida");
-          msgStatus.innerText = "";
-          window.location.href = "../status/sucesso.html";
-        }, 3000);
-  
-        return true;
-      }
-    }
-  
-    msgStatus.setAttribute("class", "erro");
-    msgStatus.innerText = "Nome de usuario ou senha incoretos!";
-  
-    setTimeout(() => {
-      msgStatus.setAttribute("class", "valida");
-      msgStatus.innerText = "";
-      window.location.href = "../status/erro.html";
-    }, 3000);
-  
-    return false;
+  { email: "email@email.com", senha: "123456" },
+  { email: "jose@email.com", senha: "123456" },
+  { email: "joao@email.com", senha: "123456" },
+  { email: "maria@email.com", senha: "123456" },
+];
+
+// //Recuperar o botão de submit através da função querySelector.
+// const btnSubmit = document.querySelector("button[type=submit]");
+// //Atrelando o evento click ao botão.
+// btnSubmit.addEventListener("click",()=>{
+
+//     let emailUser = document.querySelector("input[type=email]").value;
+//     let senhaUser = document.querySelector("input[type=password]").value;
+
+//     //Popular o objeto com os dados do usuário.
+//     usuario.email = emailUser;
+//     usuario.senha = senhaUser;
+
+// });
+
+const validaLogin = (input1, input2, event) => {
+
+    event.preventDefault();
+
+  //Pegando os valores dos inputs pelo método value.
+  const usuario = {
+    email: input1.value,
+    senha: input2.value,
   };
-  
+
+  //Recuperando elemento de mensagem.
+  const msgStatus = document.querySelector(".valida");
+
+  for (let x = 0; x < listaUsuarios.length; x++) {
+    if (
+      usuario.email === listaUsuarios[x].email &&
+      usuario.senha === listaUsuarios[x].senha
+    ) {
+
+    localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
+
+      msgStatus.setAttribute("class", "sucesso");
+      msgStatus.innerText = "Login realizado com Sucesso!";
+
+
+      setTimeout(() => {
+        msgStatus.setAttribute("class", "valida");
+        msgStatus.innerText = "";
+        window.location.href = "../status/sucesso.html";
+      }, 3000);
+
+      return true;
+    }
+  }
+
+  msgStatus.setAttribute("class", "erro");
+  msgStatus.innerText = "Nome de usuario ou senha incoretos!";
+
+  setTimeout(() => {
+    msgStatus.setAttribute("class", "valida");
+    msgStatus.innerText = "";
+    window.location.href = "../status/erro.html";
+  }, 3000);
+
+  return false;
+};
+
+
