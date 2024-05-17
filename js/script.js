@@ -244,4 +244,8 @@ const validaLogin = (input1, input2, event) => {
   return false;
 };
 
+const iniciaModal = ()=>{
+  const modal = document.querySelector("#modalLogin");
+  modal.show();
+}
 
