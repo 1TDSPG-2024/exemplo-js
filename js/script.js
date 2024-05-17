@@ -244,4 +244,9 @@ const validaLogin = (input1, input2, event) => {
   return false;
 };
 
+const botao = document.querySelector("#btnOpen");
+const modal = document.querySelector("dialog");
 
+botao.addEventListener("click", function(){
+  modal.showModal();
+})
