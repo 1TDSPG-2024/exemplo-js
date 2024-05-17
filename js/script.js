@@ -272,10 +272,14 @@ const validaLogin = (input1, input2,event)=>{
         },3000);
     return false;
 }
-
-const botao = document.querySelector("#btnOpen");
-const modal = document.querySelector("#modalLogin");
-
-botao.addEventListener("click", function(){
+const iniciaModal = () => {
+    const modal = document.querySelector("#modalLogin");
+    modal.style.backgroundColor = "rgba(0,0,0,0.8)";
     modal.showModal();
-})
+}
+// const botao = document.querySelector("#btnOpen");
+// const modal = document.querySelector("#modalLogin");
+
+// botao.addEventListener("click", function(){
+//     modal.showModal();
+// })
