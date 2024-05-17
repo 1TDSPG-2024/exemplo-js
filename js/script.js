@@ -277,43 +277,17 @@ let listaUsuarios = [
 // });
 
 // Apresentação da senha
-function apresentaSenha(input2) {
-
-    if(input2.type == "password"){
-        input2.setAttribute("type","text");
-    }else{
-        input2.setAttribute("type","password");
-    }
-}
-
-let eyeIcon = document.querySelector("i");
-
-eyeIcon.addEventListener("click", function(){ 
-    // Carregando o input senha:
-    const inputSenha = document.querySelector("#idSenha");
-
-    if(this.className == "fa-regular fa-eye"){
-        this.setAttribute("class","fa-regular fa-eye-slash");
-        apresentaSenha(inputSenha);
-    }else{
-        this.setAttribute("class","fa-regular fa-eye");
-        apresentaSenha(inputSenha);
-    }
-});
-
 const validaLogin = (input1, input2, event) => {
 
     event.preventDefault();
 
-  // Pegando os valores dos inputs pelo método value.
+  //Pegando os valores dos inputs pelo método value.
   const usuario = {
     email: input1.value,
     senha: input2.value,
   };
 
-
-
-  // Recuperando elemento de mensagem.
+  //Recuperando elemento de mensagem.
   const msgStatus = document.querySelector(".valida");
 
   for (let x = 0; x < listaUsuarios.length; x++) {
@@ -324,14 +298,9 @@ const validaLogin = (input1, input2, event) => {
 
     localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
 
-    // Criar uma String-token e colocar no sessionStorage
-    const userToken = Math.random().toString(16).substring(2); // o substring tire o 0. que apareceria no início
-
-    // Criando o token e colocando no sessionStorage
-    sessionStorage.setItem("token", userToken);
-
       msgStatus.setAttribute("class", "sucesso");
       msgStatus.innerText = "Login realizado com Sucesso!";
+
 
       setTimeout(() => {
         msgStatus.setAttribute("class", "valida");
@@ -354,3 +323,10 @@ const validaLogin = (input1, input2, event) => {
 
   return false;
 };
+
+const botao = document.querySelector("#btnOpen");
+const modal = document.querySelector("dialog");
+
+botao.addEventListener("click", function(){
+  modal.showModal();
+})
