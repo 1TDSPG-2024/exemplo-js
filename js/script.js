@@ -177,3 +177,35 @@ console.log(z);
 
 // Exercício 10 - Mesclar Arrays com Spread:
 // Crie um novo array chamado arr4 que seja a concatenação dos arrays arr1 e arr2 utilizando o operador spread. Imprima arr4 no console.
+//let listaUsuarios = [
+ // {email:"email@email.com",senha:"123456"},
+  //{email:"jose@email.com",senha:"123456"},
+  //{email:"joao@email.com",senha:"123456"},
+  //{email:"maria@email.com",senha:"123456"}
+//];
+
+//Recuperar o botão de submit através da função querySelector.
+//const btnSubmit = document.querySelector("button[type=submit]");
+//Atrelando o evento click ao botão.
+//btnSubmit.addEventListener("click",()=>{
+  //Pegando os valores dos inputs pelo método value.
+ // const usuario = {
+ //     email:"",
+  //    senha:""
+ // }
+
+ // let emailUser = document.querySelector("input[type=email]").value;
+ // let senhaUser = document.querySelector("input[type=password]").value;
+  
+  //Popular o objeto com os dados do usuário.
+//  usuario.email = emailUser;
+ // usuario.senha = senhaUser;
+
+ // for (let x = 0; x < listaUsuarios.length; x++) {
+      
+   //   if((usuario.email === listaUsuarios[x].email) && (usuario.senha === listaUsuarios[x].senha)){
+    //      console.log("Usuário validado")
+   //   }
+  //}
+
+//})
