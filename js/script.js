@@ -324,8 +324,9 @@ const validaLogin = (input1, input2, event) => {
   return false;
 };
 
-const iniciaModal = ()=>{
-  const modal = document.querySelector("dialog");
-  modal.style.backgroundColor = "rgba(0,0,0, .8)"
-  modal.show();
-}
+const botao = document.querySelector("#btnOpen");
+const modal = document.querySelector("dialog");
+
+botao.addEventListener("click", function(){
+  modal.showModal();
+})
