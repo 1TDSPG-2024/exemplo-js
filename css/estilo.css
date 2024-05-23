@@ -49,19 +49,25 @@ button[type=submit] {
 .sucesso {
   color: #0a840a;
   font-weight: 500;
-  font-style: 1.5rem;
-  background-color: #7be87b;
+  font-style: 2rem;
+  background-color: rgba(36, 194, 36, 0.5);
   text-align: center;
   border: 2px solid #0a840a;
+  margin: 10% auto;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .erro {
   color: #ff0000;
   font-weight: 500;
-  font-style: 1.5rem;
-  background-color: #fb9898;
+  font-style: 2rem;
+  background-color: rgba(219, 90, 90, 0.5);
   text-align: center;
   border: 2px solid #ff0000;
+  margin: 10% auto;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .fa-regular{
@@ -110,12 +116,12 @@ button[type=submit] {
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-dialog::backdrop{
+#modalDialog::backdrop{
   background-color: var(rgba(138, 43, 226, .8), --cor-principal);
   box-shadow: inset 0 0 1000px var(--cor-principal);
 }
 
-dialog{
+#modalDialog{
   margin: 5% auto;
   border: none;
   border-radius: 5px;

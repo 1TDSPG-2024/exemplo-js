@@ -298,28 +298,52 @@ const validaLogin = (input1, input2, event) => {
 
     localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
 
-      msgStatus.setAttribute("class", "sucesso");
-      msgStatus.innerText = "Login realizado com Sucesso!";
+      // msgStatus.setAttribute("class", "sucesso");
+      // msgStatus.innerText = "Login realizado com Sucesso!";
 
+      // Criando o elemento DIALOG:
+      let novoModal = document.createElement("dialog");
+        msgStatus.appendChild(novoModal);
+        novoModal.setAttribute("class", "sucesso");
+        novoModal.innerHTML = "<span>Login realizado com Sucesso!</span>";
+        // document.querySelector("body").appendChild(novoModal);
+        novoModal.showModal();
+
+        let count = 10;
+      setInterval(()=>{
+        novoModal.innerHTML = `<span>Login realizado com Sucesso!</span><p>Você será redirecionado em ${count--} segundos....</p>`;
+      },900);
 
       setTimeout(() => {
-        msgStatus.setAttribute("class", "valida");
-        msgStatus.innerText = "";
+        novoModal.setAttribute("class", "valida");
+        novoModal.innerHTML = "";
         window.location.href = "../status/sucesso.html";
-      }, 3000);
+      }, 10000);
 
       return true;
     }
   }
 
-  msgStatus.setAttribute("class", "erro");
-  msgStatus.innerText = "Nome de usuario ou senha incoretos!";
+  // msgStatus.setAttribute("class", "erro");
+  // msgStatus.innerText = "Nome de usuario ou senha incoretos!";
+
+        // Criando o elemento DIALOG:
+        let novoModal = document.createElement("dialog");
+        msgStatus.appendChild(novoModal);
+        novoModal.setAttribute("class", "erro");
+        novoModal.innerHTML = "<span>Nome de usuario ou senha incorretos!</span>";
+        // document.querySelector("body").appendChild(novoModal);
+        novoModal.showModal();
+        let count = 10;
+        setInterval(()=>{
+          novoModal.innerHTML = `<span>Nome de usuario ou senha incoretos!</span><p>Você será redirecionado em ${count--} segundos...</p>`;
+        },900);
 
   setTimeout(() => {
-    msgStatus.setAttribute("class", "valida");
-    msgStatus.innerText = "";
+    novoModal.setAttribute("class", "valida");
+      novoModal.innerText = "";
     window.location.href = "../status/erro.html";
-  }, 3000);
+  }, 10000);
 
   return false;
 };
