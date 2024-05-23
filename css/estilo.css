@@ -1,3 +1,9 @@
+:root{
+  --cor-principal: rgb(138, 43, 226);
+  --fonte-padrao1:1rem;
+  --fonte-padrao2:2rem;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -23,18 +29,7 @@ a:hover{
   border-color: #0a840a;
 } */
 
-button[type=submit]{
-  background: #185324;
-  border: none;
-  height: 10vh;
-  width: 10vw;
-  display: block;
-  margin: 0 auto;
-  color: white;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+
 
 
 .sucesso{
@@ -69,31 +64,36 @@ button[type=submit]{
 }
 
 .form-group div{
-  margin: 3% 0;
-  width: 100%;
+  margin: 3% auto;
+  width: 80%;
 }
 
 .form-group input[type=email],input[type=password]{
   display: block;
-  width: 50vw;
+  width: 40vw;
   height: 10vh;
   border-radius: 5px;
   border: none;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
   outline-color: #7b7e7b;
   padding-left: 10px;
+  font-size: var(--fonte-padrao1);
 }
 
 .form-group button[type=submit]{
   display: block;
-  width: 25vw;
+  margin: 0 auto;
+  color: white;
+  font-size: var(--fonte-padrao2);
+  width: 20vw;
   height: 10vh;
   border-radius: 5px;
-  border: none;
+  border: 2px solid #fff;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
   outline-color: #7b7e7b;
-  padding-left: 10px;
   transition: all .4s ease;
+  background: #006ebf;
+  cursor: pointer;
 }
 
 
@@ -102,9 +102,13 @@ button[type=submit]{
 }
 
 dialog::backdrop{
-  background-color: rgba(0,0,0, .8);
+  background-color: var(rgba(138,43,226, .8), --cor-principal);
+  box-shadow: inset 0 0 1000px var(--cor-principal);
 }
 
 dialog{
   margin: 5% auto;
+  border: none;
+  border-radius: 5px;
+  background-image: url("../img/back-login-1280×848.jpg");
 }
