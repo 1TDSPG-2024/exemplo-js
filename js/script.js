@@ -204,32 +204,29 @@ let listaUsuarios = [
 
 //Apresentação da senha
 function apresentaSenha(input2) {
-
-  if(input2.type == "password"){
+  if (input2.type == "password") {
     input2.setAttribute("type", "text");
   } else {
     input2.setAttribute("type", "password");
   }
-  
 }
 
-let eyeIcon = document.querySelector("i")
+let eyeIcon = document.querySelector("i");
 
-eyeIcon.addEventListener("click", function(){
+eyeIcon.addEventListener("click", function () {
   //Pegando o input senha:
   const inputSenha = document.querySelector("#idSenha");
-  if(this.className == "fa-regular fa-eye"){
+  if (this.className == "fa-regular fa-eye") {
     this.setAttribute("class", "fa-regular fa-eye-slash");
     apresentaSenha(inputSenha);
-  }else{
+  } else {
     this.setAttribute("class", "fa-regular fa-eye");
     apresentaSenha(inputSenha);
   }
 });
 
 const validaLogin = (input1, input2, event) => {
-
-    event.preventDefault()
+  event.preventDefault();
 
   //Pegando os valores dos inputs pelo método value.
   const usuario = {
@@ -245,26 +242,40 @@ const validaLogin = (input1, input2, event) => {
       usuario.email === listaUsuarios[x].email &&
       usuario.senha === listaUsuarios[x].senha
     ) {
-        // Se fechar ele ainda fica armazenado
-        localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
+      // Se fechar ele ainda fica armazenado
+      localStorage.setItem("usuario-logado", JSON.stringify(listaUsuarios[x]));
 
-        // Criar um String-token e colocar no sessionStorage
-        const userToken = Math.random(16).toString(16).substring(2)
-        // Criando o token e colocando no sessionStorage
-        sessionStorage.setItem("token", userToken); // Se fechar o navegador ele some
+      // Criar um String-token e colocar no sessionStorage
+      const userToken = Math.random(16).toString(16).substring(2);
+      // Criando o token e colocando no sessionStorage
+      sessionStorage.setItem("token", userToken); // Se fechar o navegador ele some
 
-      msgStatus.setAttribute("class", "sucesso");
-      msgStatus.innerText = "Login realizado com Sucesso!";
+      //Criando o elemento DIALOG
+      let novoModal = document.createElement("dialog");
+      msgStatus.appendChild(novoModal);
+      novoModal.setAttribute("class", "sucesso");
+      novoModal.innerHTML = "<span>Login realizado com Sucesso!</span>";
+      novoModal.showModal();
 
       setTimeout(() => {
-        msgStatus.setAttribute("class", "valida");
-        msgStatus.innerText = "";
+        novoModal.setAttribute("class", "valida");
+        novoModal.innerHTML = "";
         window.location.href = "../status/sucesso.html";
       }, 3000);
 
       return true;
     }
   }
+  
+  //Criando o elemento DIALOG
+  let novoModal = document.createElement("dialog");
+  msgStatus.appendChild(novoModal);
+  novoModal.setAttribute("class", "erro");
+  novoModal.innerHTML = "<span>Nome do usuário ou senha incorretos!</span>";
+  novoModal.showModal();
+  setInterval(()=>{
+    console.log("teste")
+  },1000);
 
   setTimeout(() => {
     msgStatus.setAttribute("class", "valida");
@@ -272,15 +283,12 @@ const validaLogin = (input1, input2, event) => {
     window.location.href = "../status/erro.html";
   }, 3000);
 
-  msgStatus.setAttribute("class", "erro");
-  msgStatus.innerText = "Nome do usuário ou senha incorretos!";
-  // console.log("Usuário não validado!")
-
   return false;
 };
 
-const iniciaModal = ()=>{
-  const modal = document.querySelector("#modalLogin");
-    modal.style.backgroundColor = "rgba(0,0,0, 0.8)"
-    modal.show()
-  }
+const btn = document.querySelector("#btnOpen");
+const modal = document.querySelector("dialog");
+
+btn.addEventListener("click", function () {
+  modal.showModal();
+});
